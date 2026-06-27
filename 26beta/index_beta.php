@@ -1,4 +1,32 @@
-<?php header('Content-Type: text/html; charset=UTF-8'); ?>
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+
+// Allow from any origin
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 86400');    // cache for 1 day
+}
+
+// Access-Control headers are received during OPTIONS requests
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+
+    exit(0);
+}
+
+$template = 189;
+include_once('../../subdominio_ini.php');
+include('../../conexion_mysqli.php');
+$edit_param = '';
+if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
+    $edit_param = "&mode=edit";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,8 +34,212 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Editor Scripts & Styles -->
+  <link rel="stylesheet" href="../../css/landingpage/bootstrap-colorpicker.min.css" />
+  <script src="../../js/landinpage/bootstrap-colorpicker.js"></script>
+  <script src="../../js/vendor/ckeditor/ckeditor.js"></script>
+  <script src="https://vioniko.com/js/vendor/ckeditor/ckeditor_config.js"></script>
+  <script src="../../js/landinpage/landing-page-editor-custom-es.js"></script>
+  <?php include_once('../../chatHandeler.php'); ?>
 </head>
 <body>
+
+    <div id="mySidenav" class="sidenav" style="display: none;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="pane-content">
+            <textarea id="mytextarea" name="mytextarea" style="display: none;"></textarea>
+
+            <? include_once('../videoEditor.php'); ?>
+
+            <div id="change-background-color-section">
+                <div class="title">
+                    <p class="pane-section-title">
+                        Change Section Background Color
+                    </p>
+                </div>
+                <div class="upload-input">
+                    <div class="box-beta">
+                        <a style="display: none; font-size: 15px;" href="#" class="btn-green" id="cp4">
+                            Change color
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <form action="../../landingpage_data_save_en.php" method="post" enctype="multipart/form-data" name="forma" id="forma" class="form-horizontal">
+                <input name='subdominio_titulo' class='subdominio_titulo' id='subdominio_titulo' value='<?= htmlentities($titulo); ?>' type='hidden'><!-- landing page title-->
+                <input name='subdominio_subtitulo' id='subdominio_subtitulo' value='<?= htmlentities($subtitulo); ?>' type='hidden'><!-- landing page sub title-->
+                <input name='subdominio_descripcion' id='subdominio_descripcion' value='<?= htmlentities($descripcion); ?>' type='hidden'><!-- landing page textarea-->
+                <input name='subdominio_puntos' id='subdominio_puntos' value='<?= htmlentities($puntos); ?>' type='hidden'><!-- landing page bullet area-->
+                <input name='subdominio_tituloformulario' id='subdominio_tituloformulario' value='<?= $titulo_formulario; ?>' type='hidden'><!-- landing page form title-->
+                <input name='subdominio_textoformulario' id='subdominio_textoformulario' value='<?= $texto_formulario; ?>' type='hidden'><!-- landing page form sub title-->
+                <input name='subdominio_boton' id='subdominio_boton' value='<?= $boton; ?>' type='hidden'><!-- landing page form submit button-->
+                <input name='subdominio_video' id='subdominio_video' value='<?= $video; ?>' type='hidden'><!-- landing page iframe video-->
+                <input name='videos' id='videos' value='<?= $videos; ?>' type='hidden'><!-- landing page video source -->
+                <input name='language' id='language' value='esp' type='hidden'>
+
+                <input name='subdominio_logo_bg' id='subdominio_logo_bg' value='<?php echo $logo_section_bg; ?>' type='hidden'>
+                <input name='subdominio_titulo_bg' id='subdominio_titulo_bg' value='<?php echo $title_section_bg; ?>' type='hidden'>
+                <input name='subdominio_subtitulo_bg' id='subdominio_subtitulo_bg' value='<?php echo $subtitle_section_bg; ?>' type='hidden'>
+                <input name='subdominio_textarea_bg' id='subdominio_textarea_bg' value='<?php echo $textarea_section_bg; ?>' type='hidden'>
+                <input name='subdominio_puntos_bg' id='subdominio_puntos_bg' value='<?php echo $bulleted_area_section_bg; ?>' type='hidden'>
+                <input name='subdominio_form_bg' id='subdominio_form_bg' value='<?php echo $form_section_bg; ?>' type='hidden'>
+                <input name='subdominio_tituloformulario_bg' id='subdominio_tituloformulario_bg' value='<?php echo $form_subtitle_bg; ?>' type='hidden'>
+                <input name='subdominio_textoformulario_bg' id='subdominio_textoformulario_bg' value='<?php echo $form_subtitle_bg; ?>' type='hidden'>
+                <input name='subdominio_footer_bg' id='subdominio_footer_bg' value='<?php echo $footer_section_bg; ?>' type='hidden'>
+                <input name='subdominio_avatar_bg' id='subdominio_avatar_bg' value='' type='hidden'>
+                <input name='subdominio_author_info_bg' id='subdominio_author_info_bg' value='' type='hidden'>
+                <input name='subdominio_form_name_placeholder' id='subdominio_form_name_placeholder' value='<?php echo $form_input_name_placeholder; ?>' type='hidden'>
+                <input name='subdominio_form_email_placeholder' id='subdominio_form_email_placeholder' value='<?php echo $form_input_email_placeholder; ?>' type='hidden'>
+                <input name='subdominio_form_whatsapp_placeholder' id='subdominio_form_whatsapp_placeholder' value='<?php echo $form_input_whatsapp_placeholder; ?>' type='hidden'>
+                <input name='subdominio_form_whatsapp_visible' id='subdominio_form_whatsapp_visible' value='<?php echo $form_input_whatsapp_visible; ?>' type='hidden'>
+                <input name='subdominio_background_image_library_url' id='subdominio_background_image_library_url' value='<?php echo $background_image_library_url; ?>' type='hidden'>
+                <input name='bg_LIBRARY_change_time_en' id='bg_LIBRARY_change_time_en' value='0' type='hidden'>
+                <input name='bg_UPLOAD_change_time_en' id='bg_UPLOAD_change_time_en' value='0' type='hidden'>
+                <input name='subdominio_form_submit_button' id='subdominio_form_submit_button' value='<?php echo $form_submit_button_bg; ?>' type='hidden'>
+                <input name='beta_landing_page_id' id='beta_landing_page_id' value='92' type='hidden'>
+                <input name='template_id' id='template_id' value='<?php echo $tem; ?>' type='hidden'>
+                <input name='short_length_cta_button_text' id='short_length_cta_button_text' value='<?php echo $short_length_cta_button_text; ?>' type='hidden'>
+                <input name='full_length_cta_button_text' id='full_length_cta_button_text' value='<?php echo $full_length_cta_button_text; ?>' type='hidden'>
+                <input name='short_length_cta_button_bg' id='short_length_cta_button_bg' value='<?php echo $short_length_cta_button_bg; ?>' type='hidden'>
+                <input name='full_length_cta_button_bg' id='full_length_cta_button_bg' value='<?php echo $full_length_cta_button_bg; ?>' type='hidden'>
+                <input name='subdominio_textarea1' id='subdominio_textarea1' value='<?php echo $subdominio_textarea1; ?>' type='hidden'>
+                <input name='subdominio_textarea1_bg' id='subdominio_textarea1_bg' value='<?php echo $subdominio_textarea1_bg; ?>' type='hidden'>
+                <input name='subdominio_textarea2' id='subdominio_textarea2' value='<?php echo $subdominio_textarea2; ?>' type='hidden'>
+                <input name='subdominio_textarea2_bg' id='subdominio_textarea2_bg' value='<?php echo $subdominio_textarea2_bg; ?>' type='hidden'>
+                <input name='slider_images_list' id='slider_images_list' value='<?php echo $slider_images_list; ?>' type='hidden'>
+                <input name='subdominio_box1_image' id='subdominio_box1_image' value='<?php echo $subdominio_box1_image; ?>' type='hidden'>
+                <input name='subdominio_box2_image' id='subdominio_box2_image' value='<?php echo $subdominio_box2_image; ?>' type='hidden'>
+                <input name='subdominio_box3_image' id='subdominio_box3_image' value='<?php echo $subdominio_box3_image; ?>' type='hidden'>
+                <input name='subdominio_body_background_color' id='subdominio_body_background_color' value='<?php echo $subdominio_body_background_color; ?>' type='hidden'>
+
+                <div id="change-logo-section">
+                    <div class="title">
+                        <p class="pane-section-title">
+                            Change Logo
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <label>Change Section logo</label>
+                        <input type="file" name="sectionImageUpload" class="imageUpload" id="sectionImageUpload">
+                    </div>
+
+                </div>
+                <div id="change-avatar-section">
+                    <div class="title">
+                        <p class="pane-section-title">
+                            Change Avatar
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <label>Change Footer Avatar</label>
+                        <input type="file" name="sectionAvatarUpload" class="imageUpload" id="sectionAvatarUpload">
+                    </div>
+
+                </div>
+                <div id='change-bg-section'>
+                    <div class="title">
+                        <p class="pane-section-title">
+                            Change Background
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <div class="box-beta">
+                            <a class="btn-green" href="#popup1">Choose Image From Library</a>
+                        </div>
+                    </div>
+                    <div class="upload-input">
+                        <div class="box-beta">
+                            <a style="display: none;" href="#" class="btn-green" id="cp_background">
+                                Set Background color with opactiy
+                            </a>
+                        </div>
+                    </div>
+                    <div class="or-seperator">
+                        <p class="text-center or">
+                            <span>OR</span>
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <div class="box-beta">
+                            <a class="btn-green" href="#popup-video">Choose Video From Library</a>
+                        </div>
+                    </div>
+                    <div class="or-seperator">
+                        <p class="text-center or">
+                            <span>OR</span>
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <label>Upload Background Image</label>
+                        <input type="file" accept="video/*,image/*" name="backgroundImageUpload" class="imageUpload" id="backgroundImageUpload" onchange='recordDateTime("bg_UPLOAD_change_time_en");'>
+                    </div>
+                    <div class="or-seperator">
+                        <p class="text-center or">
+                            <span>OR</span>
+                        </p>
+                    </div>
+                    <div class="upload-input">
+                        <label>Background Youtube video ID</label>
+                        <input type="text" class="form-control" id="youtube_bg" name="youtube_bg" placeholder="Enter a Background Youtube video ID" value="">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <div>
+                <div id="popup1" class="overlay">
+                    <div class="popup-beta">
+                        <span class="close-bg"><a class="close" href="#">&times;</a></span>
+                        <div class="select-file">
+                            <div class="popup-inner">
+                                <?php
+                                $dirname = "../../images/bg/thumbnail/";
+                                $images = glob($dirname . "*.jpg");
+                                foreach ($images as $image) {
+                                    echo '<div class="popup-img">';
+                                    echo '<input type="checkbox" name="">';
+                                    echo '<img class="img-responsive" src="' . $image . '"/>';
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div id="popup-video" class="overlay">
+                    <div class="popup-beta">
+                        <span class="close-bg"><a class="close" href="#">&times;</a></span>
+                        <div class="select-file">
+                            <div class="popup-inner">
+                                <?php
+                                include_once('../youtube_library.php');
+                                foreach ($images as $image) {
+                                    echo '<div class="popup-img">';
+                                    echo '<input type="checkbox" name="" class="video-responsive" data-title="' . $image . '" data-id="https://www.youtube.com/embed/' . $image . '?autohide=1&rel=0&autoplay=1&iv_load_policy=3&modestbranding=1&controls=0&showinfo=0&disablekb=1&enablejsapi=1&widgetid=1&mute=1&loop=1&playlist=' . $image . '&origin=https://www.vioniko.com&modestbranding=1">';
+                                ?>
+                                    <iframe id="youtube-video" src="//www.youtube.com/embed/<?= $image; ?>" width="100%" height="220px" frameborder="0"></iframe>
+                                <?php
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 <!-- ============ NAVBAR ============ -->
 <nav>
@@ -219,108 +451,100 @@
   </div>
 </section>
 
-                    <!-- Video/Form section Starts -->
-                    <form action="../../registro_prospecto_subdominio_getresponse24beta.php" method="post" id="prospectoForm" class="cf op-optin-validation" data-abide>
-                        <div class="row">
-                            <div class="col-lg-1 col-md-1 col-sm-12"></div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <? include_once('../videoPlayer.php'); ?>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="section-bg">
-                                    <div class="form-new new" data-id="landing-page-whole-form" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
-                                        <!-- Edit Starts -->
-                                        <div class="edit-btn-container">
-                                            <a id="whole-form" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                        <!-- Edit Ends -->
-                                        <div class="temp-form">
-                                            <div class="hover-edit">
-                                                <div class="form-title" data-id="landing-page-form-title" <?php if ($form_title_bg != '') { ?> style="background: <?php //echo $form_title_bg;
-                                                                                                                                                                     ?>" <?php } ?>>
-                                                    <h2><?= $titulo_formulario; ?></h2>
-                                                </div>
-                                                <!-- Edit Starts -->
-                                                <div class="edit-btn-container">
-                                                    <a id="form-title" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                </div>
-                                                <!-- Edit Ends -->
-                                            </div>
-                                            <div class="hover-edit">
-                                                <div class="form-subtitle" data-id="landing-page-form-sub-title" <?php if ($form_subtitle_bg != '') { ?> style="background: <?php //echo $form_subtitle_bg;
-                                                                                                                                                                             ?>" <?php } ?>>
-                                                    <h6><?= $texto_formulario; ?></h6>
-                                                </div>
-                                                <!-- Edit Starts -->
-                                                <div class="edit-btn-container">
-                                                    <a id="form-subtitle" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                </div>
-                                                <!-- Edit Ends -->
-                                            </div>
+<!-- ============ SECCIÓN VIDEO/FORM ============ -->
+<section class="videoFormSec" id="videoForm">
+  <div class="wrap">
+    <!-- Video/Form section Starts -->
+    <form action="../../registro_prospecto_subdominio_getresponse24beta.php" method="post" id="prospectoForm" class="cf op-optin-validation" data-abide>
+      <div class="videoFormGrid">
+        <div class="videoCol">
+          <?php include_once('../videoPlayer.php'); ?>
+        </div>
+        <div class="formCol">
+          <div class="section-bg">
+            <div class="form-new new" data-id="landing-page-whole-form" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+              <!-- Edit Starts -->
+              <div class="edit-btn-container">
+                  <a id="whole-form" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <!-- Edit Ends -->
+              <div class="temp-form">
+                <div class="hover-edit">
+                  <div class="form-title" data-id="landing-page-form-title">
+                    <h2><?= $titulo_formulario; ?></h2>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-title" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit">
+                  <div class="form-subtitle" data-id="landing-page-form-sub-title">
+                    <h6><?= $texto_formulario; ?></h6>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-subtitle" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
 
-                                            <div class=" hover-edit">
-                                                <div class="form-group">
-                                                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?php echo ($form_input_name_placeholder != "") ? $form_input_name_placeholder : 'Ingresa tu Nombre' ?>" data-id="form-name-placeholder">
-                                                    <small class="error-beta" style="display: none;">You must enter your name.</small>
-                                                </div>
-                                                <!-- Edit Starts -->
-                                                <div class="edit-btn-container">
-                                                    <a id="form-name" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn">
-                                                        <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                </div>
-                                                <!-- Edit Ends -->
-                                            </div>
-                                            <div class=" hover-edit">
-                                                <div class="form-group">
-                                                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?php echo ($form_input_email_placeholder != "") ? $form_input_email_placeholder : 'Ingresa tu E-mail' ?>" data-id="form-email-placeholder">
-                                                    <small class="error-beta" style="display: none;">You must enter a e-mail.</small>
-                                                </div>
-                                                <!-- Edit Starts -->
-                                                <div class="edit-btn-container">
-                                                    <a id="form-email" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                </div>
-                                                <!-- Edit Ends -->
-                                            </div>
-                                            <?php //if($form_input_whatsapp_visible != '1'){ 
-                                            ?>
-                                            <div class="hover-edit" id="whatsapp_field_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: none" <?php } ?>>
-                                                <div class="form-group">
-                                                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?php echo ($form_input_whatsapp_placeholder != "") ? $form_input_whatsapp_placeholder : 'Ingresa tu whatsapp' ?>" data-id="form-whatsapp-placeholder">
-                                                </div>
-                                                <!-- Edit Starts -->
-                                                <div class="edit-btn-container">
-                                                    <a id="form-whatsapp" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <a href="javascript:void(0);" onclick="(($(this).parent('.edit-btn-container')).parent('.hover-edit')).hide(); $('#whatsapp_field_div').hide();$('#whatsapp_show_again').removeAttr('checked'); $('#whatsapp_show_again_div').show(); $('#subdominio_form_whatsapp_visible').val(1);" class="dlt-btn"><i class="fa fa-trash"></i></a>
-                                                </div>
-                                                <!-- Edit Ends -->
-                                            </div> <!-- Till This section -->
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12"></div>
-                        </div> <!--End Row-->
-                        <div class="row aiInputContent" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+                <div class="hover-edit">
+                  <div class="form-group">
+                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?php echo ($form_input_name_placeholder != "") ? $form_input_name_placeholder : 'Ingresa tu Nombre' ?>" data-id="form-name-placeholder">
+                    <small class="error-beta" style="display: none;">You must enter your name.</small>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-name" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn">
+                      <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?php echo ($form_input_email_placeholder != "") ? $form_input_email_placeholder : 'Ingresa tu E-mail' ?>" data-id="form-email-placeholder">
+                    <small class="error-beta" style="display: none;">You must enter a e-mail.</small>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-email" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit" id="whatsapp_field_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: none" <?php } ?>>
+                  <div class="form-group">
+                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?php echo ($form_input_whatsapp_placeholder != "") ? $form_input_whatsapp_placeholder : 'Ingresa tu whatsapp' ?>" data-id="form-whatsapp-placeholder">
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-whatsapp" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" onclick="(($(this).parent('.edit-btn-container')).parent('.hover-edit')).hide(); $('#whatsapp_field_div').hide();$('#whatsapp_show_again').removeAttr('checked'); $('#whatsapp_show_again_div').show(); $('#subdominio_form_whatsapp_visible').val(1);" class="dlt-btn"><i class="fa fa-trash"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row aiInputContent" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
 
                             <h3 class="gptChat">INTELIGENCIA ARTIFICIAL</h3>
                             <div id="formContainer">
                                 <?php
-                                if (!function_exists('obfuscateApiKey')) {
-                                    function obfuscateApiKey($apiKey)
-                                    {
-                                        return base64_encode($apiKey);
-                                    }
+                                function obfuscateApiKey($apiKey)
+                                {
+                                    return base64_encode($apiKey);
                                 }
 
-                                if (!function_exists('fixSpanishCode')) {
-                                    function fixSpanishCode($inputString)
-                                    {
-                                        $outPutString = mb_convert_encoding($inputString, "UTF-8", "iso-8859-1");
-                                        return $outPutString;
-                                    }
+                                function fixSpanishCode($inputString)
+                                {
+                                    $outPutString = mb_convert_encoding($inputString, "UTF-8", "iso-8859-1");
+                                    return $outPutString;
                                 }
 
                                 if (isset($rowTEM['subdominio']) && $grupal == TRUE)
@@ -329,7 +553,7 @@
                                 $sql = "SELECT description, gptAPIKey, gptModel FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name='prompt'";
                                 $result = $conn->query($sql);
                                 $gptapi = $result->fetch_assoc();
-                                $prompt = $gptapi['description'];
+                                $prompt = fixSpanishCode($gptapi['description']);
                                 $gptAPIKey = obfuscateApiKey($gptapi['gptAPIKey']);
                                 $gptModel = $gptapi['gptModel'];
 
@@ -346,8 +570,8 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <!-- <label for="<?= strtolower($row['name']) ?>" class=""><?= $row['name'] ?></label> -->
-                                                <p class="fieldDescription"><?= $row['description'] ?></p>
-                                                <input type="text" name="<?php echo strtolower($row['name']) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= $row['name'] ?>" data-id="form-name-placeholder">
+                                                <p class="fieldDescription"><?= fixSpanishCode($row['description']) ?></p>
+                                                <input type="text" name="<?php echo strtolower($row['name']) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= fixSpanishCode($row['name']) ?>" data-id="form-name-placeholder">
 
                                                 <small class="error-beta" style="display: none;">You must enter your name.</small>
                                             </div>
@@ -401,10 +625,10 @@
                             <div id="inputContainerPrompt"></div>
 
                         </div> <!-- End Row aiInputContent -->
-                    </form>
-                    <!-- Video/Form section Ends -->
-
-
+    </form>
+    <!-- Video/Form section Ends -->
+  </div>
+</section>
 
 <!-- ============ SECCI&Oacute;N 10 &middot; FOOTER ============ -->
 <footer>
@@ -445,5 +669,78 @@
 </footer>
 
 <script src="js/script.js"></script>
+<?php include_once('../restore-content.php'); ?>
+<script>
+    $(document).ready(function() {
+        $('#prospectoForm').submit(function(event) {
+            event.preventDefault();
+            $('.gptChat').html("Loading... <br >" + "Estamos procesando con IA tu informaci&oacute;n. &iexcl;Danos un momento, por favor!");
+            const apiKeyVioniko = "<?= $gptAPIKey ?>";
+            const apiUrl = "https://api.openai.com/v1/chat/completions";
+            var formValues = $('#formContainer :input').serializeArray();
+            const apiKey = atob(apiKeyVioniko);
+            <?php
+            $prompt = str_replace("\n", ' ', $prompt);
+            ?>
+            var longSentence = '<?= $prompt ?>';
+            var formObject = {};
+            formValues.forEach(function(item) {
+                var newKey = item.name.replace(/_\d+$/, '');
+                formObject[newKey] = item.value;
+            });
+            $.each(formObject, function(variable, value) {
+                var regex = new RegExp('\\(' + variable + '\\)', 'gi');
+                longSentence = longSentence.replace(regex, value);
+
+                regex = new RegExp('\\(\\s*' + variable + '\\s*\\)', 'gi');
+                longSentence = longSentence.replace(regex, value);
+            });
+            var userMessage = longSentence.replace(/\(\s*(.*?)\s*\)/g, "$1");
+            $.ajax({
+                type: "POST",
+                url: apiUrl,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + apiKey,
+                },
+                data: JSON.stringify({
+                    model: "<?= $gptModel ?>",
+                    messages: [{
+                            role: "system",
+                            content: "You are a helpful assistant."
+                        },
+                        {
+                            role: "user",
+                            content: userMessage
+                        },
+                    ],
+                }),
+                success: function(response) {
+                    const assistantResponse =
+                        response.choices[0]?.message?.content || "No response";
+                    var newInput = $('<input>')
+                        .attr({
+                            type: 'hidden',
+                            name: 'gptResponse',
+                            value: assistantResponse,
+                        });
+
+                    var newInputPrompt = $('<input>')
+                        .attr({
+                            type: 'hidden',
+                            name: 'inputContainerPrompt',
+                            value: userMessage,
+                        });
+                    $('#inputContainer').replaceWith(newInput);
+                    $('#inputContainerPrompt').replaceWith(newInputPrompt);
+                    $('#prospectoForm').off('submit').submit();
+                },
+                error: function(error) {
+                    console.error("Error:", error);
+                },
+            });
+        });
+    });
+</script>
 </body>
 </html>

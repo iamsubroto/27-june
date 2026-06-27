@@ -1,4 +1,4 @@
-﻿  :root{
+  :root{
     --navy:#0A1E3F;
     --navy2:#0F2C5C;
     --navy3:#10355f;
@@ -266,4 +266,188 @@
   }
   @media(prefers-reduced-motion:reduce){
     #tickerRow{animation:none!important;}
+  }
+
+  /* ============ NEW VIDEO/FORM SECTION ============ */
+  .videoFormSec {
+    position: relative;
+    background: var(--navy);
+    padding: 80px 0;
+    overflow: hidden;
+  }
+  .videoFormGrid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .videoCol {
+    width: 100%;
+  }
+  .formCol {
+    width: 100%;
+  }
+  
+  /* Form Box Styles */
+  .form-new {
+    background: var(--navy2);
+    border: 1px solid rgba(63, 208, 240, 0.16);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(4, 16, 36, 0.3);
+  }
+  .form-title h2 {
+    color: var(--white);
+    font-size: 26px;
+    font-family: var(--serif);
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .form-subtitle h6 {
+    color: var(--gray);
+    font-size: 14px;
+    font-family: var(--sans);
+    text-align: center;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  
+  /* Form Inputs and Controls */
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .form-control {
+    width: 100%;
+    background: rgba(10, 30, 63, 0.6);
+    border: 1px solid rgba(143, 169, 196, 0.25);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-control:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(35, 183, 224, 0.15);
+  }
+  .form-control::placeholder {
+    color: var(--grayd);
+  }
+  
+  /* AI Input Section Styles */
+  .aiInputContent {
+    background: var(--navy2);
+    border: 1px solid rgba(63, 208, 240, 0.16);
+    border-radius: 20px;
+    margin-top: 48px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(4, 16, 36, 0.3);
+  }
+  .aiInputContent h3.gptChat {
+    color: var(--cyan2);
+    font-size: 22px;
+    font-family: var(--sans);
+    letter-spacing: .08em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .aiInputContent .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 0px;
+  }
+  .fieldDescription {
+    color: var(--ice);
+    font-size: 13px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  /* Submit Button Styles */
+  .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 30px auto 0;
+    background: var(--cyan);
+    color: var(--navy);
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(35, 183, 224, 0.3);
+    transition: transform 0.15s, box-shadow 0.2s, background-color 0.2s;
+  }
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(35, 183, 224, 0.4);
+    background: var(--cyan2);
+  }
+  .btn-submit:active {
+    transform: translateY(0);
+  }
+
+  /* Edit buttons styling for editor mode (if needed) */
+  .edit-btn-container {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .edit-btn {
+    background: rgba(35, 183, 224, 0.9);
+    color: var(--navy);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.2s;
+  }
+  .edit-btn:hover {
+    background: var(--white);
+  }
+  .dlt-btn {
+    background: rgba(224, 85, 107, 0.9);
+    color: var(--white);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 991px) {
+    .videoFormGrid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .aiInputContent .row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .aiInputContent .row {
+      grid-template-columns: 1fr;
+    }
+    .form-new, .aiInputContent {
+      padding: 30px 20px;
+    }
   }
