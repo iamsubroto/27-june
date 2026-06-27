@@ -20,7 +20,7 @@
       <a href="#resultados">Resultados</a>
       <a href="#historia">Historia</a>
       <a href="#faq">FAQ</a>
-      <a href="https://www.vioniko.com/deceroainversionista" class="navcta">Diagn&oacute;stico</a>
+      <a href="#diagnostico" class="navcta">Diagn&oacute;stico</a>
     </div>
     <button class="burger" aria-label="Men&uacute;">&#9776;</button>
   </div>
@@ -209,7 +209,7 @@
 </section>
 
 <!-- ============ SECCI&Oacute;N 9 &middot; CTA ============ -->
-<section class="ctaSec">
+<section class="ctaSec" id="diagnostico">
   <canvas id="ctaCanvas" aria-hidden="true"></canvas>
   <div class="veil"></div>
   <div class="inner wrap">
@@ -239,7 +239,7 @@
       <div class="footCol">
         <h4>Recursos</h4>
         <a href="#faq">Preguntas frecuentes</a>
-        <a href="https://www.vioniko.com/deceroainversionista">Diagn&oacute;stico gratis</a>
+        <a href="#diagnostico">Diagn&oacute;stico gratis</a>
         <a href="#">Comunidad</a>
         <a href="#">Testimonios</a>
       </div>
