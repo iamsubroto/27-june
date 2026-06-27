@@ -52,7 +52,7 @@
               <p class="heroSub2">Sin promesas de riqueza f&aacute;cil: m&eacute;todo, disciplina y resultados que puedes comprobar.</p>
             </div>
             <div class="heroBtns">
-              <a href="https://www.vioniko.com/deceroainversionista" class="btnPrimary">Hacer diagn&oacute;stico gratis &rarr;</a>
+              <a href="#diagnostico" class="btnPrimary">Hacer diagn&oacute;stico gratis &rarr;</a>
             </div>
           </div>
         </div>
