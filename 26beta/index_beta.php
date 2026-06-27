@@ -219,6 +219,193 @@
   </div>
 </section>
 
+                    <!-- Video/Form section Starts -->
+                    <form action="../../registro_prospecto_subdominio_getresponse24beta.php" method="post" id="prospectoForm" class="cf op-optin-validation" data-abide>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <? include_once('../videoPlayer.php'); ?>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="section-bg">
+                                    <div class="form-new new" data-id="landing-page-whole-form" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+                                        <!-- Edit Starts -->
+                                        <div class="edit-btn-container">
+                                            <a id="whole-form" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <!-- Edit Ends -->
+                                        <div class="temp-form">
+                                            <div class="hover-edit">
+                                                <div class="form-title" data-id="landing-page-form-title" <?php if ($form_title_bg != '') { ?> style="background: <?php //echo $form_title_bg;
+                                                                                                                                                                     ?>" <?php } ?>>
+                                                    <h2><?= $titulo_formulario; ?></h2>
+                                                </div>
+                                                <!-- Edit Starts -->
+                                                <div class="edit-btn-container">
+                                                    <a id="form-title" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Edit Ends -->
+                                            </div>
+                                            <div class="hover-edit">
+                                                <div class="form-subtitle" data-id="landing-page-form-sub-title" <?php if ($form_subtitle_bg != '') { ?> style="background: <?php //echo $form_subtitle_bg;
+                                                                                                                                                                             ?>" <?php } ?>>
+                                                    <h6><?= $texto_formulario; ?></h6>
+                                                </div>
+                                                <!-- Edit Starts -->
+                                                <div class="edit-btn-container">
+                                                    <a id="form-subtitle" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Edit Ends -->
+                                            </div>
+
+                                            <div class=" hover-edit">
+                                                <div class="form-group">
+                                                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?php echo ($form_input_name_placeholder != "") ? $form_input_name_placeholder : 'Ingresa tu Nombre' ?>" data-id="form-name-placeholder">
+                                                    <small class="error-beta" style="display: none;">You must enter your name.</small>
+                                                </div>
+                                                <!-- Edit Starts -->
+                                                <div class="edit-btn-container">
+                                                    <a id="form-name" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn">
+                                                        <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Edit Ends -->
+                                            </div>
+                                            <div class=" hover-edit">
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?php echo ($form_input_email_placeholder != "") ? $form_input_email_placeholder : 'Ingresa tu E-mail' ?>" data-id="form-email-placeholder">
+                                                    <small class="error-beta" style="display: none;">You must enter a e-mail.</small>
+                                                </div>
+                                                <!-- Edit Starts -->
+                                                <div class="edit-btn-container">
+                                                    <a id="form-email" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Edit Ends -->
+                                            </div>
+                                            <?php //if($form_input_whatsapp_visible != '1'){ 
+                                            ?>
+                                            <div class="hover-edit" id="whatsapp_field_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: none" <?php } ?>>
+                                                <div class="form-group">
+                                                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?php echo ($form_input_whatsapp_placeholder != "") ? $form_input_whatsapp_placeholder : 'Ingresa tu whatsapp' ?>" data-id="form-whatsapp-placeholder">
+                                                </div>
+                                                <!-- Edit Starts -->
+                                                <div class="edit-btn-container">
+                                                    <a id="form-whatsapp" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <a href="javascript:void(0);" onclick="(($(this).parent('.edit-btn-container')).parent('.hover-edit')).hide(); $('#whatsapp_field_div').hide();$('#whatsapp_show_again').removeAttr('checked'); $('#whatsapp_show_again_div').show(); $('#subdominio_form_whatsapp_visible').val(1);" class="dlt-btn"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                                <!-- Edit Ends -->
+                                            </div> <!-- Till This section -->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                        </div> <!--End Row-->
+                        <div class="row aiInputContent" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+
+                            <h3 class="gptChat">INTELIGENCIA ARTIFICIAL</h3>
+                            <div id="formContainer">
+                                <?php
+                                if (!function_exists('obfuscateApiKey')) {
+                                    function obfuscateApiKey($apiKey)
+                                    {
+                                        return base64_encode($apiKey);
+                                    }
+                                }
+
+                                if (!function_exists('fixSpanishCode')) {
+                                    function fixSpanishCode($inputString)
+                                    {
+                                        $outPutString = mb_convert_encoding($inputString, "UTF-8", "iso-8859-1");
+                                        return $outPutString;
+                                    }
+                                }
+
+                                if (isset($rowTEM['subdominio']) && $grupal == TRUE)
+                                    $subdominio = $rowTEM['subdominio'];
+
+                                $sql = "SELECT description, gptAPIKey, gptModel FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name='prompt'";
+                                $result = $conn->query($sql);
+                                $gptapi = $result->fetch_assoc();
+                                $prompt = $gptapi['description'];
+                                $gptAPIKey = obfuscateApiKey($gptapi['gptAPIKey']);
+                                $gptModel = $gptapi['gptModel'];
+
+                                $sql = "SELECT id, name, description FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name!='prompt'";
+                                $result = $conn->query($sql);
+                                $columnCount = 0;
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        if ($columnCount % 3 == 0) {
+                                            echo '<div class="row">';
+                                        }
+                                ?>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <!-- <label for="<?= strtolower($row['name']) ?>" class=""><?= $row['name'] ?></label> -->
+                                                <p class="fieldDescription"><?= $row['description'] ?></p>
+                                                <input type="text" name="<?php echo strtolower($row['name']) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= $row['name'] ?>" data-id="form-name-placeholder">
+
+                                                <small class="error-beta" style="display: none;">You must enter your name.</small>
+                                            </div>
+                                        </div>
+
+                                <?php
+                                        $columnCount++;
+
+                                        // Close the row if the current row has 3 columns
+                                        if ($columnCount % 3 == 0) {
+                                            echo '</div>';
+                                        }
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+
+                                $conn->close();
+                                ?>
+                            </div>
+                            <!-- End GPT -->
+                            <?php //if($form_input_whatsapp_visible == '1'){ 
+                            ?>
+                            <div class="hover-edit12" id="whatsapp_show_again_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: block;" <?php } ?> style="display: none;">
+                                <div class="form-group">
+                                    <input type="checkbox" style="opacity:1; position: relative;" name="whatsapp_show_again" id="whatsapp_show_again" value="whatsapp_show_again">Show whatsapp field
+                                </div>
+                            </div>
+                            <?php //} 
+                            ?>
+                            <div class="hover-edit">
+                                <div class="form-group">
+                                    <button <?php if ($form_submit_button_bg != '') { ?> style="background: <?php echo $form_submit_button_bg; ?>" <?php } ?> type="submit" data-id="landing-page-form-submit-button" class="btn btn-default btn-submit"><?= $boton; ?></button>
+                                </div>
+                                <!-- Edit Starts -->
+                                <div class="edit-btn-container">
+                                    <a id="form-submit" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <!--                                        <a href="#" class="dlt-btn"><i class="fa fa-trash"></i></a>-->
+                                </div>
+                                <!-- Edit Ends -->
+                            </div>
+
+                            <!-- TERMINA TITULO DEL BOTON DEL FORMULARIO-->
+                            <input type="hidden" name="pais" id="pais" value="<? echo $geo["geoplugin_countryName"]; ?>">
+                            <input type="hidden" name="ciudad" id="ciudad" value="<? echo $geo["geoplugin_city"]; ?>">
+                            <input type="hidden" name="estado" id="estado" value="<? echo $geo["geoplugin_regionName"]; ?>">
+                            <input type="hidden" name="usuario" id="usuario" value="<?= $usuario; ?>">
+                            <input type="hidden" name="template" id="template" value="<?= $template; ?>">
+                            <input type="hidden" name="idioma" id="idioma" value="es">
+                            <div id="inputContainer"></div>
+                            <div id="inputContainerPrompt"></div>
+
+                        </div> <!-- End Row aiInputContent -->
+                    </form>
+                    <!-- Video/Form section Ends -->
+
+
+
 <!-- ============ SECCI&Oacute;N 10 &middot; FOOTER ============ -->
 <footer>
   <div class="wrap">
