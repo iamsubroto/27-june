@@ -429,33 +429,32 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
   </div>
 </section>
 
-<!-- ============ SECCI&Oacute;N 8 &middot; FAQ ============ -->
+<!-- ============ SECCIÓN 8 · FAQ ============ -->
 <section class="faq" id="faq">
   <div class="wrap">
     <div style="padding-top:84px;"></div>
-    <span class="eyebrow">Preguntas frecuentes</span>
-    <h2 style="margin-top:10px;">Preguntas frecuentes</h2>
-    <p class="lead">Las dudas m&aacute;s comunes, respondidas con honestidad.</p>
+    <span class="eyebrow">Preguntas Frecuentes</span>
+    <h2 style="margin-top:10px;">Preguntas Frecuentes</h2>
     <div class="faqGrid">
-      <div class="qa"><button>&iquest;Puedo perder todo mi dinero?<span class="arr">+</span></button><div class="ans"><p>El riesgo existe, pero perderlo todo le pasa a quien opera sin control. El primer pilar del m&eacute;todo es justo gestionar el riesgo.</p></div></div>
-      <div class="qa"><button>&iquest;A los 40 o 45 ya es tarde?<span class="arr">+</span></button><div class="ans"><p>No es tarde. A esa edad sueles tener m&aacute;s estabilidad y capacidad de ahorro, y eso juega a tu favor.</p></div></div>
-      <div class="qa"><button>&iquest;Necesito mucho dinero para empezar?<span class="arr">+</span></button><div class="ans"><p>No. En acciones puedes empezar desde 10-30 USD, y primero entrenas en simulaci&oacute;n sin arriesgar capital real.</p></div></div>
-      <div class="qa"><button>&iquest;Qu&eacute; pasa despu&eacute;s de los 3 meses?<span class="arr">+</span></button><div class="ans"><p>Puedes seguir con la membres&iacute;a y la comunidad para sostener tu progreso. No te quedas solo.</p></div></div>
-      <div class="qa"><button>&iquest;Necesito saber de finanzas?<span class="arr">+</span></button><div class="ans"><p>No. El m&eacute;todo est&aacute; dise&ntilde;ado para gente com&uacute;n. Muchos alumnos ven&iacute;an de profesiones sin relaci&oacute;n con las finanzas.</p></div></div>
-      <div class="qa"><button>&iquest;Qu&eacute; resultados puedo esperar?<span class="arr">+</span></button><div class="ans"><p>Sin promesas: 7 de cada 10 alumnos son rentables. El m&eacute;todo funciona, pero la disciplina la pones t&uacute;.</p></div></div>
+      <div class="qa"><button>¿Requiero conocimientos previos de la bolsa?<span class="arr">+</span></button><div class="ans"><p>No. El método está diseñado para empezar desde cero. Te llevamos paso a paso, desde lo más básico hasta operar con tu propio capital</p></div></div>
+      <div class="qa"><button>¿Cuánto tiempo dura el entrenamiento?<span class="arr">+</span></button><div class="ans"><p>El programa dura 3 meses, divididos en 3 fases: teoría, simulación y cuenta real. Después puedes seguir con la membresía y la comunidad</p></div></div>
+      <div class="qa"><button>¿Puedo perder mi dinero al invertir?<span class="arr">+</span></button><div class="ans"><p>El riesgo existe, pero perderlo todo le pasa a quien opera sin control. El primer pilar del método es justo gestionar el riesgo</p></div></div>
+      <div class="qa"><button>¿Necesito mucho dinero para empezar?<span class="arr">+</span></button><div class="ans"><p>No. En acciones puedes empezar desde $10-$30 USD, y primero entrenas en simulación sin arriesgar capital real</p></div></div>
+      <div class="qa"><button>¿Qué resultados puedo esperar?<span class="arr">+</span></button><div class="ans"><p>Sin promesas: 7 de cada 10 alumnos son rentables. El método funciona, pero la disciplina la pones tú</p></div></div>
+      <div class="qa"><button>¿Cómo aplico para una BECA y cómo sé si califico?<span class="arr">+</span></button><div class="ans"><p>Es un apoyo que reduce el costo del programa para quienes califican. La mejor forma de saber si aplicas es registrarte para un diagnóstico gratuito: ahí revisamos tu situación y te decimos con claridad si eres candidato</p></div></div>
     </div>
-    <div class="faqAll"><a href="https://www.vioniko.com/deceroainversionista">Ver todas las preguntas &rarr;</a></div>
+    <div class="faqAll"><a href="#diagnostico" onclick="DIAG.open(event)">Ver todas las preguntas →</a></div>
   </div>
 </section>
 
-<!-- ============ SECCI&Oacute;N 9 &middot; CTA ============ -->
-<section class="ctaSec" id="diagnostico">
+<!-- ============ SECCIÓN 9 · CTA ============ -->
+<section class="ctaSec">
   <canvas id="ctaCanvas" aria-hidden="true"></canvas>
   <div class="veil"></div>
   <div class="inner wrap">
-    <h2>Tu pr&oacute;xima inversi&oacute;n puede ser<br>la <span class="c">primera de muchas.</span></h2>
-    <p>Agenda tu diagn&oacute;stico gratuito: revisamos d&oacute;nde est&aacute;s, qu&eacute; te frena, y si calificas para una beca. Sin compromiso ni venta de humo.</p>
-    <a href="https://www.vioniko.com/deceroainversionista" class="btnPrimary">Hacer diagn&oacute;stico gratis &rarr;</a>
+    <h2>Tu Próxima Inversión Puede ser<br>la <span class="c">Primera de Muchas</span></h2>
+    <p>Realiza tu diagnóstico gratuito y precalifica para una BECA PARCIAL. Te contactaremos de inmediato y validaremos tu perfil para acceder a nuestro programa de becas</p>
+    <a href="#diagnostico" onclick="DIAG.open(event)" class="btnPrimary">Hacer Diagnóstico Gratis →</a>
   </div>
 </section>
 
