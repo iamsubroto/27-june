@@ -33,7 +33,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=1.3">
+  <link rel="stylesheet" href="css/style.css?v=1.4">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -637,40 +637,46 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
   </div>
 </section>
 
-<!-- ============ SECCI&Oacute;N 10 &middot; FOOTER ============ -->
+<!-- ============ SECCIÓN 10 · FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="footGrid">
       <div class="footBrand">
-        <div class="logo" style="color:#fff;">
-          <img src="logo.png" alt="De Cero a Inversionista" style="height:64px;width:auto;background:#fff;border-radius:10px;padding:6px 10px;">
+        <div class="footLogo">
+          <img src="logo.png" alt="De Cero a Inversionista">
         </div>
-        <p>Entrenamos profesionales para invertir en la Bolsa de NY con m&eacute;todo, disciplina y acompa&ntilde;amiento.</p>
+        <p>Entrenamos profesionales para invertir en la Bolsa de NY con método, disciplina y acompañamiento.</p>
       </div>
       <div class="footCol">
         <h4>Academia</h4>
-        <a href="#metodo">M&eacute;todo CERO</a>
-        <a href="#">El programa</a>
+        <a href="#metodo">Método CERO</a>
+        <a href="#programa">El programa</a>
         <a href="#resultados">Resultados</a>
         <a href="#historia">Historia</a>
       </div>
       <div class="footCol">
         <h4>Recursos</h4>
         <a href="#faq">Preguntas frecuentes</a>
-        <a href="#diagnostico">Diagn&oacute;stico gratis</a>
-        <a href="#">Comunidad</a>
-        <a href="#">Testimonios</a>
+        <a href="#diagnostico" onclick="DIAG.open(event)">Diagnóstico gratis</a>
+        <a href="#resultados">Comunidad</a>
+        <a href="#testimonios">Testimonios</a>
+      </div>
+      <div class="footCol">
+        <h4>Unidades de Negocio</h4>
+        <a href="#">Texcoco</a>
+        <a href="#">Aguascalientes</a>
+        <a href="#">Guadalajara</a>
       </div>
       <div class="footCol">
         <h4>Legal y contacto</h4>
         <a href="#">Aviso de privacidad</a>
-        <a href="#">T&eacute;rminos y condiciones</a>
+        <a href="#">Términos y condiciones</a>
       </div>
     </div>
     <div class="footDiv"></div>
     <div class="footLegal">
-      <div class="copy">&copy; 2026 Academia De Cero a Inversionista &middot; Osvaldo Mares &amp; Alejandro Alberto. Todos los derechos reservados.</div>
-      <div class="disc"><i>🔒</i><span>Aviso legal: invertir conlleva riesgo. Los resultados pasados no garantizan resultados futuros. El contenido es educativo y no constituye asesor&iacute;a financiera personalizada.</span></div>
+      <div class="copy">© 2026 Academia De Cero a Inversionista · Osvaldo Mares &amp; Alejandro Alberto. Todos los derechos reservados.</div>
+      <div class="disc"><i>🔒</i><span>Aviso legal: invertir conlleva riesgo. Los resultados pasados no garantizan resultados futuros. El contenido es educativo y no constituye asesoría financiera personalizada.</span></div>
     </div>
   </div>
 </footer>
