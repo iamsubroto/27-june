@@ -112,7 +112,7 @@
   .phase:hover{transform:translateY(-5px);border-color:rgba(63,208,240,.45);}
   .phase .pn{font-family:var(--serif);font-size:54px;font-weight:700;color:var(--cyan);line-height:.9;}
   .phase h3{color:var(--white);font-size:25px;margin:16px 0 14px;}
-  .phase p{color:var(--gray);font-size:14.5px;}
+  .phase p{color:var(--gray);font-size:14.5px;text-align:justify;text-justify:inter-word;hyphens:auto;}
 
   /* ============ M&Eacute;TODO CERO ============ */
   .metodo{background:var(--light);padding:84px 0;}

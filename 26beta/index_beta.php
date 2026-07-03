@@ -33,7 +33,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=1.2">
+  <link rel="stylesheet" href="css/style.css?v=1.3">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -327,27 +327,27 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
   </div>
 </section>
 
-<!-- ============ SECCI&Oacute;N 3 &middot; PROGRAMA ============ -->
-<section class="programa">
+<!-- ============ SECCIÓN 3 · PROGRAMA ============ -->
+<section class="programa" id="programa">
   <div class="wrap">
     <span class="eyebrow" style="display:block;padding-top:80px;margin-bottom:14px;">El programa</span>
-    <h2>3 fases. <em>3 meses.</em></h2>
-    <p class="lead">As&iacute; te llevamos de cero a operar con seguridad, sin saltos al vac&iacute;o.</p>
+    <h2>3 Fases... <em>3 Meses</em></h2>
+    <p class="lead">Te Llevamos de Cero a operar de forma Consciente, Consistente y Recurrente</p>
     <div class="phaseGrid">
       <div class="phase">
         <div class="pn">01</div>
-        <h3>Teor&iacute;a</h3>
-        <p>Videos y conceptos clave dentro de la plataforma. Aprendes a leer el mercado y los 4 pilares del M&eacute;todo CERO.</p>
+        <h3>Teoría</h3>
+        <p>Plataforma de E-learning, con videos y conceptos clave para saber invertir con éxito. Aprende lo relacionado al mercado y domina los 4 pilares del Método Cero</p>
       </div>
       <div class="phase">
         <div class="pn">02</div>
-        <h3>Simulaci&oacute;n</h3>
-        <p>Practicas en UCharts con dinero NO real. Alertas diarias y clases en vivo los mi&eacute;rcoles operando con mentor.</p>
+        <h3>Simulación</h3>
+        <p>Practica con dinero no real en UCharts y recibe alertas diarias para reforzar el aprendizaje. Accede a clases en vivo con mentor</p>
       </div>
       <div class="phase">
         <div class="pn">03</div>
-        <h3>Cuenta real</h3>
-        <p>Cuando dominas el m&eacute;todo, operas con tu capital. Acompa&ntilde;amiento 1 a 1 y sesi&oacute;n de dudas los viernes.</p>
+        <h3>Cuenta Real</h3>
+        <p>Recibe acompañamiento uno a uno, opera con tu propio capital y accede a sesiones de dudas en vivo</p>
       </div>
     </div>
   </div>
