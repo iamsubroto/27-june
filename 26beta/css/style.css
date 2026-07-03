@@ -99,7 +99,7 @@
   .countries .t{color:var(--white);font-family:var(--serif);font-size:20px;margin-bottom:8px;}
   .countries .flagGrid{display:flex;justify-content:center;flex-wrap:wrap;gap:34px;margin-top:22px;}
   .countries .fc{display:flex;flex-direction:column;align-items:center;gap:8px;}
-  .countries .fc .fl{font-size:38px;line-height:1;}
+  .countries .fc .fl{width:48px;height:48px;display:block;object-fit:contain;}
   .countries .fc .cn{color:var(--ice);font-size:13px;letter-spacing:.04em;font-weight:500;}
 
   /* ============ PROGRAMA ============ */
