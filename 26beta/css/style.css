@@ -31,9 +31,9 @@
 
   /* ============ NAVBAR ============ */
   nav{position:sticky;top:0;z-index:50;background:rgba(244,247,250,.92);backdrop-filter:blur(10px);border-bottom:1px solid #dce5ef;}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;}
   .logo{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--navy);display:flex;align-items:center;gap:9px;}
-  .logoImg{height:46px;width:auto;display:block;}
+  .logoImg{height:64px;width:auto;display:block;}
   .logo .bull{width:30px;height:30px;background:var(--navy);border-radius:7px;display:flex;align-items:center;justify-content:center;}
   .navlinks{display:flex;align-items:center;gap:30px;}
   .navlinks a{font-size:14px;color:#33485f;font-weight:500;transition:color .2s;}
@@ -129,10 +129,21 @@
   .histGrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
   .historia h2{color:var(--navy);font-size:clamp(34px,5vw,56px);margin-bottom:14px;}
   .historia .lead{color:var(--cyan);font-size:21px;font-style:italic;font-family:var(--serif);margin-bottom:30px;}
-  .historia p{color:#46586e;font-size:15.5px;margin-bottom:18px;}
+  .historia p{color:#46586e;font-size:15.5px;margin-bottom:18px; text-align: justify;}
   .teamCard{background:var(--navy);border-radius:16px;padding:30px 32px;}
   .founder{display:flex;align-items:center;gap:16px;}
-  .founder .av{width:72px;height:72px;border-radius:14px;background:var(--navy2);overflow:hidden;flex-shrink:0;border:2px solid rgba(63,208,240,.35);}
+  .founder .av {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: var(--navy2);
+    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(63, 208, 240, 0.35);
+    border-image: none;
+}
   .founder .av img{width:100%;height:100%;object-fit:cover;display:block;}
   .founder .nm{color:var(--white);font-family:var(--serif);font-size:23px;font-weight:700;}
   .founder .rl{color:var(--cyan2);font-size:13px;margin-top:2px;}
@@ -141,7 +152,7 @@
 
   /* ============ TESTIMONIOS ============ */
   .testi{background:var(--light);padding:0 0 84px;}
-  .testi h2{color:var(--navy);font-size:clamp(34px,5vw,56px);margin-bottom:14px;}
+  .testi h2{color:var(--navy);font-size:clamp(34px,5vw,56px);}
   .testi .lead{color:#5a6b7e;font-size:17px;font-style:italic;margin-bottom:44px;}
   .testiGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .tcard{background:var(--cardlight);border-radius:14px;padding:30px 28px;display:flex;flex-direction:column;}

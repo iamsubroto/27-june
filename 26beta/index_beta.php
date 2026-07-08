@@ -33,7 +33,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=1.4">
+  <link rel="stylesheet" href="css/style.css?v=1.5">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -252,7 +252,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
       <a href="#resultados">Resultados</a>
       <a href="#historia">Historia</a>
       <a href="#faq">FAQ</a>
-      <a href="#diagnostico" class="navcta">Diagn&oacute;stico</a>
+      <a href="#diagnostico" onclick="DIAG.open(event)" class="navcta">Diagn&oacute;stico</a>
     </div>
     <button class="burger" aria-label="Men&uacute;">&#9776;</button>
   </div>
@@ -398,7 +398,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 </section>
 
 <!-- ============ SECCI&Oacute;N 6 &middot; TESTIMONIOS ============ -->
-<section class="testi">
+<section class="testi" id="testimonios">
   <div class="wrap">
     <div style="padding-top:84px;"></div>
     <span class="eyebrow">Testimonios</span>
@@ -409,7 +409,6 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
       <div class="tcard"><div class="q">&ldquo;</div><p>Ten&iacute;a mi dinero parado en el banco. Aprend&iacute; a invertir para mi retiro, paso a paso y acompa&ntilde;ada.</p><div class="who">Alumna &middot; Guadalajara</div></div>
       <div class="tcard"><div class="q">&ldquo;</div><p>Ya sab&iacute;a la teor&iacute;a pero no era consistente. El m&eacute;todo y el acompa&ntilde;amiento diario lo cambiaron todo.</p><div class="who">Alumno &middot; CDMX</div></div>
     </div>
-    <p class="testiNote">Espacio para testimonios reales en video o captura (sustituir cuando se recopilen).</p>
   </div>
 </section>
 
@@ -669,8 +668,8 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
       </div>
       <div class="footCol">
         <h4>Legal y contacto</h4>
-        <a href="#">Aviso de privacidad</a>
-        <a href="#">Términos y condiciones</a>
+        <a href="/landingpage/26beta/aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="/landingpage/26beta/terminos-y-condiciones.html">Términos y condiciones</a>
       </div>
     </div>
     <div class="footDiv"></div>
@@ -1016,7 +1015,7 @@ const DIAG = (function(){
 </script>
 <!-- ============ FIN OVERLAY DIAGNÓSTICO ============ -->
 
-<script src="js/script.js?v=1.2"></script>
+<script src="js/script.js"></script>
 <?php include_once('../restore-content.php'); ?>
 <script>
     $(document).ready(function() {
