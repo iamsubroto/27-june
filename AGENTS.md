@@ -43,3 +43,6 @@ During the comparison, the following layout and behavior issues were identified 
 3. **Contrast & Text Color:**
    - *Issue:* The default body text color in `style.css` was set to `#808489` instead of `#13243d` from the original HTML.
    - *Fix:* Restored `color: #13243d` to `body` inside `style.css` (line 23) to provide optimal text contrast for the light-colored content sections.
+4. **¿Para quién es? Section Alignment:**
+   - *Issue:* The subtitle, lead text, card headers, and descriptions in the "¿Para quién es?" section of `index_beta.php` differed from the original HTML template.
+   - *Fix:* Replaced the section text with the exact copy from the template.

@@ -1,0 +1,138 @@
+Las Preguntas más Frecuentes:
+¿Requiero conocimientos previos de la bolsa?
+No. El método está diseñado para empezar desde cero. Te llevamos paso a paso, desde lo más básico hasta operar con tu propio capital.
+¿Cuánto tiempo dura el entrenamiento?
+El programa dura 3 meses, divididos en 3 fases: teoría, simulación y cuenta real. Después puedes seguir con la membresía y la comunidad.
+¿Puedo perder mi dinero al invertir?
+El riesgo existe, pero perderlo todo le pasa a quien opera sin control. El primer pilar del método es justo gestionar el riesgo.
+¿Necesito mucho dinero para empezar?
+No. En acciones puedes empezar desde $10-$30 USD, y primero entrenas en simulación sin arriesgar capital real.
+¿Qué resultados puedo esperar?
+Sin promesas: 7 de cada 10 alumnos son rentables. El método funciona, pero la disciplina la pones tú.
+¿Cómo aplico para una BECA y cómo sé si califico?
+Es un apoyo que reduce el costo del programa para quienes califican. La mejor forma de saber si aplicas es registrarte para un diagnóstico gratuito: ahí revisamos tu situación y te decimos con claridad si eres candidato.
+El proceso paso a paso (empieza aquí)
+1. ¿Cómo es el proceso del alumno desde que entra?
+El recorrido está pensado para llevarte de la mano, paso a paso, sin que te sientas perdido en ningún momento. Empiezas estudiando, luego practicas en simulación con acompañamiento, y terminas operando en real ya preparado. Aquí te explicamos cada etapa.
+2. ¿Cuál es el primer paso al adquirir el entrenamiento?
+Lo primero es estudiar dentro de la plataforma a la que te damos acceso: ahí encuentras los videos pregrabados con los conceptos básicos y las estrategias que vas a aprender. Es tu base teórica, la que te prepara para todo lo que sigue.
+3. ¿Qué hago después de los videos?
+El siguiente paso es descargar UCharts, la herramienta que te permite leer los gráficos y entrar al proceso de entrenamiento del Método CERO en simulación. Ahí empiezas a aplicar lo que aprendiste, pero sin arriesgar dinero real.
+
+4. ¿Tengo clases en vivo? ¿Cuándo?
+Sí. Cada semana tienes dos clases en vivo: los miércoles operamos juntos en la bolsa con un mentor, en tiempo real; y los viernes hacemos sesiones de dudas. Esto te permite identificar lo que no quedó claro en los videos y fortalecer tu aprendizaje con apoyo directo.
+5. ¿Qué son las alertas diarias?
+Todos los días recibes alertas desde UCharts para la simulación de las estrategias que se presentan durante la operación de la bolsa. Estas alertas te ayudan a reforzar la estrategia, el proceso y a generar ganancias en simulación, que después replicarás en un ambiente real con tu cuenta.
+6. ¿Cuándo paso a operar con dinero real?
+Pasas a la cuenta real cuando dominas el método y demuestras consistencia en simulación. La idea es que llegues a ese punto ya preparado, con la estrategia y la disciplina probadas, para que operar con tu dinero sea la consecuencia natural del entrenamiento, no un salto al vacío.
+7. ¿Cómo se ve una operación paso a paso en la práctica?
+Una vez que dominas el método, ejecutar una operación sigue siempre la misma secuencia ordenada, y esa repetición es justo lo que te vuelve consistente. Paso 1 — Detecto la estrategia: reviso el gráfico de mi acción o ETF y detecto una oportunidad que cumple con mis reglas. Paso 2 — Negocio mi contrato: voy al simulador y negocio mis contratos de opciones, definiendo su vigencia, la estrategia y el precio strike. Paso 3 — Fijo mi ganancia: pongo el límite (limit) para determinar mi objetivo de ganancia, por ejemplo del 100%. Paso 4 — Doy seguimiento: visualizo gráficamente el desempeño del precio de la acción para monitorear cómo evoluciona mi operación. Paso 5 — Cierro con ganancia: mi contrato alcanza el objetivo y cierro la operación. Lo clave: no improvisas en ningún paso. Cada operación sigue la misma estructura, y eso convierte la rentabilidad en un resultado repetible, no en suerte.
+Bloque 1 — Lo más básico
+8. ¿Qué es la Bolsa de Valores y cómo funciona en palabras simples?
+Es un mercado donde se compran y venden partes de empresas (acciones). Imagina un gran mercado donde, en lugar de frutas, se intercambian pedacitos de compañías como Apple o Amazon. Cuando compras, te vuelves dueño de una parte muy pequeña de esa empresa, y si su valor sube, el tuyo también.
+9. ¿Qué significa "invertir" y en qué se diferencia de ahorrar?
+Ahorrar es guardar tu dinero (queda quieto, y la inflación le va quitando valor). Invertir es poner ese dinero a trabajar para que crezca con el tiempo. El ahorro te da tranquilidad a corto plazo; la inversión te construye futuro.
+10. ¿Qué es una acción y qué estoy comprando realmente?
+Una acción es una parte de la propiedad de una empresa. Al comprarla, te conviertes en socio minoritario: si la empresa crece y vale más, tu parte vale más. No compras un "papel", compras un pedacito real de un negocio.
+11. ¿Cuál es la diferencia entre invertir y "hacer trading"?
+Invertir suele ser a largo plazo: compras y mantienes esperando que crezca con los años. El trading es más a corto plazo: aprovechas movimientos del mercado en periodos más cortos. En la academia te entrenamos para ambos, según tus objetivos.
+12. ¿Por qué la Bolsa de Nueva York y no otra?
+Porque es la más grande, líquida y sólida del mundo. Ahí cotizan las empresas más reconocidas del planeta, hay información transparente y movimiento constante. Es el mejor lugar para aprender a invertir con seriedad.
+13. ¿Qué significado tienen las velas?
+Las velas (o "velas japonesas") son la forma en que se representa el precio en una gráfica. Cada vela te cuenta una pequeña historia: a qué precio abrió, a qué precio cerró, y qué tan alto y bajo llegó en un periodo de tiempo. Aprender a leerlas es como aprender el idioma del mercado.
+14. ¿Qué es una vela verde?
+Una vela verde significa que en ese periodo el precio cerró más alto de lo que abrió: hubo más compra que venta. En pocas palabras, el precio subió. Es señal de fuerza compradora.
+15. ¿Qué significa una vela roja?
+Lo contrario: el precio cerró más bajo de lo que abrió. Hubo más venta que compra, y el precio bajó. Es señal de fuerza vendedora.
+16. ¿Cómo se forman las velas?
+Cada vela se forma en un periodo de tiempo que tú eliges (un minuto, una hora, un día). Tiene un cuerpo (la diferencia entre el precio de apertura y cierre) y unas "mechas" o sombras (los precios máximo y mínimo que alcanzó). Al unirse muchas velas, se dibuja el comportamiento del precio.
+17. ¿Qué es un martillo y qué significa?
+El martillo es una vela con un cuerpo pequeño arriba y una mecha (sombra) larga hacia abajo, que parece justamente un martillo. Aparece después de una caída y suele ser señal de que los vendedores empujaron el precio hacia abajo, pero los compradores reaccionaron y lo regresaron arriba. En pocas palabras: puede anticipar que el precio está por dejar de bajar y empezar a subir. Es una de las señales de reversión que enseñamos a identificar.
+18. ¿Qué es un martillo invertido y qué significa?
+El martillo invertido tiene el cuerpo pequeño abajo y la mecha larga hacia arriba (es como un martillo de cabeza). También aparece tras una caída, y señala que los compradores intentaron empujar el precio hacia arriba. Es otra posible señal de que la tendencia bajista podría estar por cambiar. La clave, como siempre, no es la vela sola, sino leerla dentro de tu plan y con el contexto del mercado.
+19. ¿Qué significa una tendencia alcista?
+Es cuando el precio va subiendo de forma sostenida con el tiempo, formando máximos y mínimos cada vez más altos. En palabras simples: el mercado va "para arriba". Es terreno favorable para quien busca que su inversión crezca.
+20. ¿Qué significa una tendencia bajista?
+Lo opuesto: el precio va bajando de forma sostenida, con máximos y mínimos cada vez más bajos. El mercado va "para abajo". Saber identificarla es clave para protegerte y no comprar en el momento equivocado.
+21. ¿Cómo se forma un canal alcista?
+Un canal alcista se forma cuando el precio sube manteniéndose entre dos líneas paralelas inclinadas hacia arriba: una por debajo (soporte) y otra por encima (resistencia). El precio "rebota" dentro de ese canal mientras sube. Te ayuda a anticipar zonas donde el precio podría reaccionar.
+22. ¿Cómo se forma un canal bajista?
+Igual, pero hacia abajo: el precio se mueve entre dos líneas paralelas inclinadas a la baja, mientras desciende. Reconocer estos canales te da pistas de hacia dónde se está moviendo el mercado y dónde podría reaccionar el precio.
+
+
+Bloque 2 — Instrumentos: acciones, opciones y ETFs
+23. ¿Qué es una acción? (a fondo)
+Ya vimos que es una parte de una empresa. Profundizando: cuando tienes acciones, ganas de dos formas. Una, si el precio sube y vendes más caro de lo que compraste. Dos, si la empresa reparte parte de sus ganancias entre sus dueños (los dividendos). Es la forma más directa de ser "socio" de grandes compañías.
+24. ¿Qué es una opción?
+Una opción es un contrato que te da el derecho (no la obligación) de comprar o vender una acción a un precio fijo, antes de una fecha determinada. Es una herramienta más avanzada: bien usada, permite estrategias potentes; mal usada y sin método, es de las formas más rápidas de perder. Por eso se entrena con disciplina, no se improvisa.
+25. ¿Cómo se gana dinero con acciones y opciones?
+Con acciones, ganas cuando suben de precio o cuando pagan dividendos. Con opciones, ganas anticipando correctamente el movimiento del precio (que suba o baje) y aprovechando ese contrato. En ambos casos, la diferencia entre ganar y perder no es la suerte: es operar con un método, reglas claras y control del riesgo.
+26. ¿Qué es el precio strike?
+Es el precio fijo pactado en una opción: el valor al que tienes derecho a comprar o vender la acción si decides ejercer ese contrato. Es una de las piezas clave para entender cómo funciona una opción.
+27. ¿Las acciones y opciones tienen vigencia?
+Las acciones no caducan: puedes conservarlas el tiempo que quieras mientras la empresa exista. Las opciones sí tienen fecha de vencimiento: llegado ese día, el contrato expira. Por eso en opciones el tiempo es un factor clave que hay que saber manejar.
+28. ¿Qué son los dividendos?
+Son una parte de las ganancias que algunas empresas reparten entre sus accionistas, normalmente cada cierto tiempo. Es como recibir un "pago" por ser dueño de una parte de la empresa, además de la posible subida del precio. No todas las empresas los pagan, pero las que lo hacen son atractivas para quien busca ingresos constantes.
+29. ¿Qué significan los earnings de las empresas?
+Los earnings son los reportes de ganancias que las empresas publican cada cierto tiempo (normalmente cada trimestre). Muestran cómo le fue al negocio. Son importantes porque suelen mover el precio de la acción: un buen reporte puede impulsarla, uno malo puede hundirla. Saber cuándo salen te ayuda a anticipar movimientos.
+30. ¿Qué es un ETF?
+Un ETF es como una canasta que agrupa muchas acciones en un solo paquete. En lugar de comprar una empresa, compras un pedacito de muchas a la vez. Esto diversifica tu riesgo: si una empresa va mal, las otras equilibran. Es una opción popular para quien empieza porque reparte el riesgo.
+31. ¿Cuáles son los ETFs más conocidos?
+Algunos de los más conocidos son el SPY (que sigue a las 500 empresas más grandes de EE.UU.), el QQQ (enfocado en empresas tecnológicas) y el DIA (que sigue al índice Dow Jones). Son de los más operados del mundo por su solidez y movimiento constante.
+
+
+Bloque 2 — Miedo y riesgo
+32. ¿Invertir es como apostar o como un casino?
+No, y esta es una diferencia clave. En un casino las probabilidades están en tu contra y dependes del azar. Invertir con método es lo opuesto: decisiones basadas en datos, reglas y un plan. El que improvisa sí lo convierte en apuesta. El que sigue un proceso, no.
+33. ¿Qué es el "riesgo" y cómo se controla?
+El riesgo es la posibilidad de perder en una operación. Se controla definiendo de antemano cuánto puedes perder, usando reglas claras y no arriesgando más de lo sensato en una sola jugada. No se trata de eliminar el riesgo (imposible), sino de gestionarlo para que nunca te haga daño grave.
+34. ¿Es seguro? ¿Qué pasa si el mercado se cae?
+Ningún mercado sube siempre; las caídas son parte normal. La diferencia entre quien sobrevive y quien no es tener un plan para esos momentos. Con método, una caída no es pánico: es una situación prevista para la que ya sabes qué hacer.
+35. Ya perdí dinero antes invirtiendo solo, ¿por qué sería diferente ahora?
+Porque lo más probable es que no perdieras por falta de capacidad, sino por operar sin un proceso y sin nadie que te corrigiera. La mayoría falla por eso: improvisa, se deja llevar por la emoción y repite los mismos errores. Lo que cambia aquí es que tienes un método y acompañamiento diario para no caer en lo mismo.
+36. ¿Qué tan común es perder dinero y por qué pasa?
+Es muy común entre quienes operan solos, y casi siempre por las mismas razones: falta de reglas, exceso de información confusa, decisiones por miedo o euforia, y no controlar el riesgo. No es mala suerte: es falta de proceso. Eso es justo lo que se entrena.
+Bloque 3 — Cómo empezar
+37. ¿Cuáles son los primeros pasos para empezar desde cero?
+Primero, entender cómo funciona el mercado (teoría básica). Luego, practicar en una cuenta de simulación sin arriesgar dinero real. Y cuando ya dominas la ejecución, pasas a operar en real. En la academia te llevamos por esas tres fases, paso a paso.
+38. ¿Con cuántas acciones debo empezar a invertir?
+Mi recomendación es empezar enfocándote en un par de acciones, las que vas a dominar primero, y practicar con ellas en la simulación. El resto de las acciones las usas para conocerlas y entender cómo se comportan, sin dispersarte. Una vez que dominas el método y te sientes listo, puedes ampliar el número de empresas en las que inviertes. Mejor dominar pocas que improvisar con muchas.
+39. ¿Con cuánto dinero puedo empezar a invertir?
+Para el mercado de acciones puedes empezar con poco: desde 10, 20 o 30 dólares. Para el mercado de opciones, pedimos una cuenta mínima de 500 dólares; esto es para cubrir la suscripción de los datos en tiempo real que el bróker exige como mínimo para poder operar en vivo. Lo importante no es con cuánto empiezas, sino que aprendas a operar con método antes de aumentar tu capital.
+40. ¿Qué es una cuenta de simulación (demo) y por qué empezar ahí?
+Es una cuenta de práctica con dinero ficticio que opera en condiciones reales del mercado. Empiezas ahí para aprender a ejecutar sin arriesgar un solo peso. Cuando demuestras consistencia en simulación, pasas a real con seguridad y sin miedo.
+
+41. ¿Cuánto tiempo necesito al día o a la semana?
+Menos del que crees, pero requiere constancia. Lo importante no es pasar horas frente a la pantalla, sino seguir tu rutina y tu plan. Con las clases en vivo y las alertas diarias, te ayudamos a aprovechar el tiempo de forma eficiente.
+42. ¿Qué herramientas o plataformas necesito? ¿Tienen costo?
+Para operar usamos Interactive Brokers como bróker, un proveedor totalmente confiable y reconocido a nivel mundial. Para la lectura de gráficos y el simulador con el que entrenas el Método CERO, usamos UCharts. De estas herramientas, la única que tiene un costo (que corre por tu cuenta) es UCharts: es tu inversión en la plataforma profesional que te permite practicar y operar para lograr ser rentable. Solo necesitas una computadora o celular con internet, y te enseñamos a usar todo paso a paso.
+43. ¿Qué son los datos en tiempo real en Interactive Brokers?
+Es una suscripción que te permite operar con la información del mercado al instante, viendo los precios justo en el momento en que se mueven. Esto es clave porque, para ser rentable, necesitas tomar decisiones sobre precios actuales y no con información retrasada. Operar con datos en tiempo real te da la precisión para actuar en el momento correcto.
+44. ¿Cuánto tiempo toma volverse rentable de forma realista?
+Depende de tu disciplina, pero sé honesto contigo: no es de la noche a la mañana. El entrenamiento es de 3 meses y muchos de nuestros alumnos recuperan su inversión en alrededor de 6 meses. La rentabilidad llega con el proceso, no antes de él.
+Bloque 4 — Método y disciplina
+45. ¿Por qué necesito un método y no solo seguir consejos o señales?
+Porque las señales te hacen dependiente: si te dicen qué comprar pero no entiendes por qué, nunca aprendes y siempre necesitarás que alguien te diga qué hacer. Un método te hace autónomo: aprendes a tomar tus propias decisiones con criterio. Te enseñamos a pescar, no te damos el pescado.
+46. ¿Qué es un plan de trading y por qué es tan importante?
+Es tu conjunto de reglas: qué operar, cuándo entrar, cuándo salir y cuánto arriesgar. Es importante porque sin él, cada decisión es improvisada y bajo presión. Con un plan, dejas de adivinar y empiezas a ser consistente.
+47. ¿Cómo controlo mis emociones al operar?
+No se trata de no sentir miedo o euforia, sino de no obedecerles. Eso se logra con reglas claras: cuando tu plan te dice qué hacer, no dependes de tu estado de ánimo. La disciplina se entrena, y el acompañamiento diario te ayuda a sostenerla.
+48. ¿Qué diferencia hay entre la academia y un curso pregrabado o un grupo de señales?
+Un curso pregrabado te da información y te suelta. Un grupo de señales te da órdenes pero no te enseña. Nosotros te entrenamos para ejecutar con disciplina y te acompañamos todos los días con clases en vivo, alertas y seguimiento. No te dejamos solo a medio camino.
+49. ¿Qué es el acompañamiento y cómo funciona?
+Es nuestro diferenciador. Tienes clases en vivo, alertas diarias y apoyo cercano para resolver dudas y corregir tu ejecución en tiempo real. No estudias solo viendo videos: tienes un equipo detrás que te corrige y te sostiene mientras aprendes.
+
+50. ¿Qué pasa si me equivoco o rompo mi plan?
+Pasa, y es parte del aprendizaje. La diferencia es que aquí no te equivocas solo: lo revisamos, entendemos por qué pasó y ajustamos para que no se repita. Equivocarse con corrección te hace mejorar; equivocarse solo te hace repetir.
+Bloque 5 — Retiro y futuro
+51. ¿Puedo construir mi retiro invirtiendo en la bolsa?
+Sí, y es una de las razones más poderosas para empezar. En lugar de depender solo de un Afore o una pensión, aprendes a hacer crecer tu propio capital con el tiempo. Construyes un esquema de retiro que tú controlas.
+52. ¿A los 40 o 45 años ya es tarde?
+No es tarde. Lo digo de corazón: el mejor momento para empezar fue hace años, pero el segundo mejor momento es hoy. A esa edad sueles tener más estabilidad y capacidad de ahorro que a los 20, y eso juega a tu favor.
+53. ¿Cómo hago que mi dinero deje de perder valor en el banco?
+El dinero parado en el banco pierde poder de compra cada año por la inflación. Ponerlo a trabajar mediante la inversión es la forma de que crezca por encima de esa inflación, en lugar de verlo encogerse en silencio.
+54. ¿Cuánto debería invertir cada mes pensando en el largo plazo?
+No hay una cifra única: depende de tus ingresos y metas. La regla sana es invertir de forma constante solo lo que no necesites para tus gastos del día a día. Más que el monto, lo que construye tu futuro es la constancia.
+Bloque 6 — Sobre la academia
+55. ¿Qué pasa después de los 3 meses? ¿Me quedo solo?
+No. Después del entrenamiento puedes seguir con nuestra membresía, que te mantiene con acompañamiento y comunidad para sostener tu progreso. La idea es que nunca te quedes solo en el camino.
