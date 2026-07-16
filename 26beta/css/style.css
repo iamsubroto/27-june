@@ -296,16 +296,9 @@
     padding: 80px 0;
     overflow: hidden;
   }
-  .videoFormGrid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-  .videoCol {
-    width: 100%;
-  }
-  .formCol {
+  .videoCentered {
+    max-width: 800px;
+    margin: 0 auto;
     width: 100%;
   }
   
@@ -455,23 +448,7 @@
     margin-top: 5px;
   }
 
-  @media (max-width: 991px) {
-    .videoFormGrid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-    .aiInputContent .row {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 600px) {
-    .aiInputContent .row {
-      grid-template-columns: 1fr;
-    }
-    .form-new, .aiInputContent {
-      padding: 30px 20px;
-    }
-  }
+
 
 
 /* ============ DIAGNOSTIC MODAL OVERLAY STYLES ============ */
