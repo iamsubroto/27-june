@@ -252,7 +252,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
       <a href="#resultados">Resultados</a>
       <a href="#historia">Historia</a>
       <a href="#faq">FAQ</a>
-      <a href="#diagnostico" onclick="DIAG.open(event)" class="navcta">Diagn&oacute;stico</a>
+      <a href="#videoForm" onclick="document.getElementById('name').focus();" class="navcta">Diagn&oacute;stico</a>
     </div>
     <button class="burger" aria-label="Men&uacute;">&#9776;</button>
   </div>
@@ -293,7 +293,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
             <p class="heroSub2" style="white-space:nowrap;">Sin promesas de riqueza fácil: método, disciplina y resultados que puedes comprobar</p>
           </div>
           <div class="heroBtns">
-            <a href="#diagnostico" onclick="DIAG.open(event)" class="btnPrimary">Hacer Diagnóstico Gratis →</a>
+            <a href="#videoForm" onclick="document.getElementById('name').focus();" class="btnPrimary">Hacer Diagnóstico Gratis →</a>
           </div>
         </div>
       </div>
@@ -454,16 +454,187 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
   <div class="inner wrap">
     <h2>Tu Próxima Inversión Puede ser<br>la <span class="c">Primera de Muchas</span></h2>
     <p>Realiza tu diagnóstico gratuito y precalifica para una BECA PARCIAL. Te contactaremos de inmediato y validaremos tu perfil para acceder a nuestro programa de becas</p>
-    <a href="#diagnostico" onclick="DIAG.open(event)" class="btnPrimary">Hacer Diagnóstico Gratis →</a>
+    <a href="#videoForm" onclick="document.getElementById('name').focus();" class="btnPrimary">Hacer Diagnóstico Gratis →</a>
   </div>
 </section>
 
 <!-- ============ SECCIÓN VIDEO/FORM ============ -->
 <section class="videoFormSec" id="videoForm">
   <div class="wrap">
-    <div class="videoCentered">
-      <?php include_once('../videoPlayer.php'); ?>
-    </div>
+    <!-- Video/Form section Starts -->
+    <form action="../../registro_prospecto_subdominio_getresponse24beta.php" method="post" id="prospectoForm" class="cf op-optin-validation" data-abide>
+      <div class="videoFormGrid">
+        <div class="videoCol">
+          <?php include_once('../videoPlayer.php'); ?>
+        </div>
+        <div class="formCol">
+          <div class="section-bg">
+            <div class="form-new new" data-id="landing-page-whole-form" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+              <!-- Edit Starts -->
+              <div class="edit-btn-container">
+                  <a id="whole-form" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <!-- Edit Ends -->
+              <div class="temp-form">
+                <div class="hover-edit">
+                  <div class="form-title" data-id="landing-page-form-title">
+                    <h2><?= $titulo_formulario; ?></h2>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-title" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit">
+                  <div class="form-subtitle" data-id="landing-page-form-sub-title">
+                    <h6><?= $texto_formulario; ?></h6>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-subtitle" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+
+                <div class="hover-edit">
+                  <div class="form-group">
+                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?php echo ($form_input_name_placeholder != "") ? $form_input_name_placeholder : 'Ingresa tu Nombre' ?>" data-id="form-name-placeholder">
+                    <small class="error-beta" style="display: none;">You must enter your name.</small>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-name" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn">
+                      <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?php echo ($form_input_email_placeholder != "") ? $form_input_email_placeholder : 'Ingresa tu E-mail' ?>" data-id="form-email-placeholder">
+                    <small class="error-beta" style="display: none;">You must enter a e-mail.</small>
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-email" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit" id="whatsapp_field_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: none" <?php } ?>>
+                  <div class="form-group">
+                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?php echo ($form_input_whatsapp_placeholder != "") ? $form_input_whatsapp_placeholder : 'Ingresa tu whatsapp' ?>" data-id="form-whatsapp-placeholder">
+                  </div>
+                  <!-- Edit Starts -->
+                  <div class="edit-btn-container">
+                    <a id="form-whatsapp" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" onclick="(($(this).parent('.edit-btn-container')).parent('.hover-edit')).hide(); $('#whatsapp_field_div').hide();$('#whatsapp_show_again').removeAttr('checked'); $('#whatsapp_show_again_div').show(); $('#subdominio_form_whatsapp_visible').val(1);" class="dlt-btn"><i class="fa fa-trash"></i></a>
+                  </div>
+                  <!-- Edit Ends -->
+                  <button type="button" <?php if ($form_submit_button_bg != '') { ?> style="background: <?php echo $form_submit_button_bg; ?>" <?php } ?> data-id="landing-page-form-submit-button" class="btn btn-default btn-submit" onclick="$('#formContainer input:first').focus();"><?= $boton; ?></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row aiInputContent" <?php if ($form_section_bg != "") { ?> style="background: <?php echo $form_section_bg; ?>" <?php } ?>>
+
+                            <h3 class="gptChat">INTELIGENCIA ARTIFICIAL</h3>
+                            <div id="formContainer">
+                                <?php
+                                function obfuscateApiKey($apiKey)
+                                {
+                                    return base64_encode($apiKey);
+                                }
+
+                                function fixSpanishCode($inputString)
+                                {
+                                    $outPutString = mb_convert_encoding($inputString, "UTF-8", "iso-8859-1");
+                                    return $outPutString;
+                                }
+
+                                if (isset($rowTEM['subdominio']) && $grupal == TRUE)
+                                    $subdominio = $rowTEM['subdominio'];
+
+                                $sql = "SELECT description, gptAPIKey, gptModel FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name='prompt'";
+                                $result = $conn->query($sql);
+                                $gptapi = $result->fetch_assoc();
+                                $prompt = fixSpanishCode($gptapi['description']);
+                                $gptAPIKey = obfuscateApiKey($gptapi['gptAPIKey']);
+                                $gptModel = $gptapi['gptModel'];
+
+                                $sql = "SELECT id, name, description FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name!='prompt'";
+                                $result = $conn->query($sql);
+                                $columnCount = 0;
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        if ($columnCount % 3 == 0) {
+                                            echo '<div class="row">';
+                                        }
+                                ?>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <!-- <label for="<?= strtolower($row['name']) ?>" class=""><?= $row['name'] ?></label> -->
+                                                <p class="fieldDescription"><?= fixSpanishCode($row['description']) ?></p>
+                                                <input type="text" name="<?php echo strtolower($row['name']) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= fixSpanishCode($row['name']) ?>" data-id="form-name-placeholder">
+
+                                                <small class="error-beta" style="display: none;">You must enter your name.</small>
+                                            </div>
+                                        </div>
+
+                                <?php
+                                        $columnCount++;
+
+                                        // Close the row if the current row has 3 columns
+                                        if ($columnCount % 3 == 0) {
+                                            echo '</div>';
+                                        }
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+
+                                $conn->close();
+                                ?>
+                            </div>
+                            <!-- End GPT -->
+                            <?php //if($form_input_whatsapp_visible == '1'){ 
+                            ?>
+                            <div class="hover-edit12" id="whatsapp_show_again_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: block;" <?php } ?> style="display: none;">
+                                <div class="form-group">
+                                    <input type="checkbox" style="opacity:1; position: relative;" name="whatsapp_show_again" id="whatsapp_show_again" value="whatsapp_show_again">Show whatsapp field
+                                </div>
+                            </div>
+                            <?php //} 
+                            ?>
+                            <div class="hover-edit">
+                                <div class="form-group">
+                                    <button <?php if ($form_submit_button_bg != '') { ?> style="background: <?php echo $form_submit_button_bg; ?>" <?php } ?> type="submit" data-id="landing-page-form-submit-button" class="btn btn-default btn-submit"><?= $boton; ?></button>
+                                </div>
+                                <!-- Edit Starts -->
+                                <div class="edit-btn-container">
+                                    <a id="form-submit" onclick="sectionEdit(this.id); openNav()" href="javascript:void(0);" class="edit-btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <!--                                        <a href="#" class="dlt-btn"><i class="fa fa-trash"></i></a>-->
+                                </div>
+                                <!-- Edit Ends -->
+                            </div>
+
+                            <!-- TERMINA TITULO DEL BOTON DEL FORMULARIO-->
+                            <input type="hidden" name="pais" id="pais" value="<? echo $geo["geoplugin_countryName"]; ?>">
+                            <input type="hidden" name="ciudad" id="ciudad" value="<? echo $geo["geoplugin_city"]; ?>">
+                            <input type="hidden" name="estado" id="estado" value="<? echo $geo["geoplugin_regionName"]; ?>">
+                            <input type="hidden" name="usuario" id="usuario" value="<?= $usuario; ?>">
+                            <input type="hidden" name="template" id="template" value="<?= $template; ?>">
+                            <input type="hidden" name="idioma" id="idioma" value="es">
+                            <div id="inputContainer"></div>
+                            <div id="inputContainerPrompt"></div>
+
+                        </div> <!-- End Row aiInputContent -->
+    </form>
+    <!-- Video/Form section Ends -->
   </div>
 </section>
 
@@ -487,7 +658,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
       <div class="footCol">
         <h4>Recursos</h4>
         <a href="#faq">Preguntas frecuentes</a>
-        <a href="#diagnostico" onclick="DIAG.open(event)">Diagnóstico gratis</a>
+        <a href="#videoForm" onclick="document.getElementById('name').focus();">Diagnóstico gratis</a>
         <a href="#resultados">Comunidad</a>
         <a href="#testimonios">Testimonios</a>
       </div>
@@ -847,6 +1018,78 @@ const DIAG = (function(){
 <!-- ============ FIN OVERLAY DIAGNÓSTICO ============ -->
 
 <script src="js/script.js"></script>
-<?php if (isset($conn) && $conn) { $conn->close(); } ?>
+<?php include_once('../restore-content.php'); ?>
+<script>
+    $(document).ready(function() {
+        $('#prospectoForm').submit(function(event) {
+            event.preventDefault();
+            $('.gptChat').html("Loading... <br >" + "Estamos procesando con IA tu informaci&oacute;n. &iexcl;Danos un momento, por favor!");
+            const apiKeyVioniko = "<?= $gptAPIKey ?>";
+            const apiUrl = "https://api.openai.com/v1/chat/completions";
+            var formValues = $('#formContainer :input').serializeArray();
+            const apiKey = atob(apiKeyVioniko);
+            <?php
+            $prompt = str_replace("\n", ' ', $prompt);
+            ?>
+            var longSentence = '<?= $prompt ?>';
+            var formObject = {};
+            formValues.forEach(function(item) {
+                var newKey = item.name.replace(/_\d+$/, '');
+                formObject[newKey] = item.value;
+            });
+            $.each(formObject, function(variable, value) {
+                var regex = new RegExp('\\(' + variable + '\\)', 'gi');
+                longSentence = longSentence.replace(regex, value);
+
+                regex = new RegExp('\\(\\s*' + variable + '\\s*\\)', 'gi');
+                longSentence = longSentence.replace(regex, value);
+            });
+            var userMessage = longSentence.replace(/\(\s*(.*?)\s*\)/g, "$1");
+            $.ajax({
+                type: "POST",
+                url: apiUrl,
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + apiKey,
+                },
+                data: JSON.stringify({
+                    model: "<?= $gptModel ?>",
+                    messages: [{
+                            role: "system",
+                            content: "You are a helpful assistant."
+                        },
+                        {
+                            role: "user",
+                            content: userMessage
+                        },
+                    ],
+                }),
+                success: function(response) {
+                    const assistantResponse =
+                        response.choices[0]?.message?.content || "No response";
+                    var newInput = $('<input>')
+                        .attr({
+                            type: 'hidden',
+                            name: 'gptResponse',
+                            value: assistantResponse,
+                        });
+
+                    var newInputPrompt = $('<input>')
+                        .attr({
+                            type: 'hidden',
+                            name: 'inputContainerPrompt',
+                            value: userMessage,
+                        });
+                    $('#inputContainer').replaceWith(newInput);
+                    $('#inputContainerPrompt').replaceWith(newInputPrompt);
+                    $('#prospectoForm').off('submit').submit();
+                },
+                error: function(error) {
+                    console.error("Error:", error);
+                },
+            });
+        });
+    });
+</script>
 </body>
 </html>
