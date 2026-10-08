@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
-$template = 189;
+$template = 191;
 include_once('../../subdominio_ini.php');
 include('../../conexion_mysqli.php');
 $edit_param = '';
@@ -544,26 +544,21 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                             <h3 class="gptChat">INTELIGENCIA ARTIFICIAL</h3>
                             <div id="formContainer">
                                 <?php
-                                function obfuscateApiKey($apiKey)
-                                {
-                                    return base64_encode($apiKey);
-                                }
-
                                 function fixSpanishCode($inputString)
                                 {
-                                    $outPutString = mb_convert_encoding($inputString, "UTF-8", "iso-8859-1");
+                                    if (!is_string($inputString) || $inputString === '') return $inputString;
+                                    // already UTF-8? converting again would double-encode it
+                                    if (preg_match('/[\xC2-\xF4][\x80-\xBF]/', $inputString) && mb_check_encoding($inputString, 'UTF-8')) {
+                                        return $inputString;
+                                    }
+                                    // Windows-1252, not iso-8859-1: 0x80-0x9F holds the curly quotes and
+                                    // dashes people paste into prompts; iso-8859-1 turns them invisible.
+                                    $outPutString = mb_convert_encoding($inputString, "UTF-8", "Windows-1252");
                                     return $outPutString;
                                 }
 
                                 if (isset($rowTEM['subdominio']) && $grupal == TRUE)
                                     $subdominio = $rowTEM['subdominio'];
-
-                                $sql = "SELECT description, gptAPIKey, gptModel FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name='prompt'";
-                                $result = $conn->query($sql);
-                                $gptapi = $result->fetch_assoc();
-                                $prompt = fixSpanishCode($gptapi['description']);
-                                $gptAPIKey = obfuscateApiKey($gptapi['gptAPIKey']);
-                                $gptModel = $gptapi['gptModel'];
 
                                 $sql = "SELECT id, name, description FROM gptapi g, usuario u WHERE g.userid=u.clave AND subdominio='$subdominio' AND name!='prompt'";
                                 $result = $conn->query($sql);
@@ -579,7 +574,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                                             <div class="form-group">
                                                 <!-- <label for="<?= strtolower($row['name']) ?>" class=""><?= $row['name'] ?></label> -->
                                                 <p class="fieldDescription"><?= fixSpanishCode($row['description']) ?></p>
-                                                <input type="text" name="<?php echo strtolower($row['name']) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= fixSpanishCode($row['name']) ?>" data-id="form-name-placeholder">
+                                                <input type="text" name="<?php echo fixSpanishCode(strtolower($row['name'])) . "_" . $row['id']; ?>" class="form-control" id="<?= strtolower($row['name']) ?>" required placeholder="<?= fixSpanishCode($row['name']) ?>" data-id="form-name-placeholder">
 
                                                 <small class="error-beta" style="display: none;">You must enter your name.</small>
                                             </div>
@@ -1024,49 +1019,17 @@ const DIAG = (function(){
         $('#prospectoForm').submit(function(event) {
             event.preventDefault();
             $('.gptChat').html("Loading... <br >" + "Estamos procesando con IA tu informaci&oacute;n. &iexcl;Danos un momento, por favor!");
-            const apiKeyVioniko = "<?= $gptAPIKey ?>";
-            const apiUrl = "https://api.openai.com/v1/chat/completions";
             var formValues = $('#formContainer :input').serializeArray();
-            const apiKey = atob(apiKeyVioniko);
-            <?php
-            $prompt = str_replace("\n", ' ', $prompt);
-            ?>
-            var longSentence = '<?= $prompt ?>';
-            var formObject = {};
-            formValues.forEach(function(item) {
-                var newKey = item.name.replace(/_\d+$/, '');
-                formObject[newKey] = item.value;
-            });
-            $.each(formObject, function(variable, value) {
-                var regex = new RegExp('\\(' + variable + '\\)', 'gi');
-                longSentence = longSentence.replace(regex, value);
-
-                regex = new RegExp('\\(\\s*' + variable + '\\s*\\)', 'gi');
-                longSentence = longSentence.replace(regex, value);
-            });
-            var userMessage = longSentence.replace(/\(\s*(.*?)\s*\)/g, "$1");
             $.ajax({
                 type: "POST",
-                url: apiUrl,
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer " + apiKey,
+                url: "../ai-report.php",
+                dataType: "json",
+                data: {
+                    subdominio: <?= json_encode((string) $subdominio, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>,
+                    fields: JSON.stringify(formValues),
                 },
-                data: JSON.stringify({
-                    model: "<?= $gptModel ?>",
-                    messages: [{
-                            role: "system",
-                            content: "You are a helpful assistant."
-                        },
-                        {
-                            role: "user",
-                            content: userMessage
-                        },
-                    ],
-                }),
                 success: function(response) {
-                    const assistantResponse =
-                        response.choices[0]?.message?.content || "No response";
+                    const assistantResponse = response.result || "No response";
                     var newInput = $('<input>')
                         .attr({
                             type: 'hidden',
@@ -1075,17 +1038,18 @@ const DIAG = (function(){
                         });
 
                     var newInputPrompt = $('<input>')
-                        .attr({
-                            type: 'hidden',
-                            name: 'inputContainerPrompt',
-                            value: userMessage,
-                        });
+                            .attr({
+                                type: 'hidden',
+                                name: 'inputContainerPrompt',
+                                value: response.prompt || '',
+                            });
                     $('#inputContainer').replaceWith(newInput);
                     $('#inputContainerPrompt').replaceWith(newInputPrompt);
                     $('#prospectoForm').off('submit').submit();
                 },
                 error: function(error) {
                     console.error("Error:", error);
+                    $('.gptChat').text("No pudimos generar el reporte en este momento. Por favor, intenta de nuevo.");
                 },
             });
         });
