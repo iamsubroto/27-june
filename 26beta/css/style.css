@@ -1,4 +1,4 @@
-  :root{
+﻿  :root{
     --navy:#0A1E3F;
     --navy2:#0F2C5C;
     --navy3:#10355f;
@@ -113,6 +113,15 @@
   .phase .pn{font-family:var(--serif);font-size:54px;font-weight:700;color:var(--cyan);line-height:.9;}
   .phase h3{color:var(--white);font-size:25px;margin:16px 0 14px;}
   .phase p{color:var(--gray);font-size:14.5px;text-align:justify;text-justify:inter-word;hyphens:auto;}
+  .phaseGrid1 .phase{padding:16px 22px;}
+  .phaseGrid1 .phase .pn{font-size:34px;}
+  .phaseGrid1 .phase h3{font-size:19px;margin:6px 0 7px;}
+  .phaseGrid1 .phase p{font-size:12.5px;line-height:1.45;}
+  .phaseGrid2{margin-top:22px;}
+  .planCard{display:flex;flex-direction:column;padding:14px 14px 18px;}
+  .planImg{width:100%;aspect-ratio:1460/752;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:14px;overflow:hidden;}
+  .planImg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .planCard p{font-size:13px;}
 
   /* ============ M&Eacute;TODO CERO ============ */
   .metodo{background:var(--light);padding:84px 0;}

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 header('Content-Type: text/html; charset=UTF-8');
 
 // Allow from any origin
@@ -331,9 +331,9 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <section class="programa" id="programa">
   <div class="wrap">
     <span class="eyebrow" style="display:block;padding-top:80px;margin-bottom:14px;">El programa</span>
-    <h2>3 Fases... <em>3 Meses</em></h2>
+    <h2>3 Niveles de <em>Aprendizaje</em></h2>
     <p class="lead">Te Llevamos de Cero a operar de forma Consciente, Consistente y Recurrente</p>
-    <div class="phaseGrid">
+    <div class="phaseGrid phaseGrid1">
       <div class="phase">
         <div class="pn">01</div>
         <h3>Teoría</h3>
@@ -348,6 +348,20 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
         <div class="pn">03</div>
         <h3>Cuenta Real</h3>
         <p>Recibe acompañamiento uno a uno, opera con tu propio capital y accede a sesiones de dudas en vivo</p>
+      </div>
+    </div>
+    <div class="phaseGrid phaseGrid2">
+      <div class="phase planCard">
+        <div class="planImg"><img src="images/trd_pic.jpg" alt="Invierte Sin Miedo · Entrenamiento Básico"></div>
+        <p>Aprende la verdadera mentalidad del inversionista, cómo funcionan los contratos de opciones y a identificar tendencias (canales alcistas y bajistas) para dar tus primeros pasos con seguridad.</p>
+      </div>
+      <div class="phase planCard">
+        <div class="planImg"><img src="images/trd_pic.jpg" alt="Invierte con Estrategia · Avanzado"></div>
+        <p>Domina estrategias para mercados alcistas y bajistas, aplica una gestión estricta del capital y perfecciona tu análisis técnico para saber cuándo entrar y salir.</p>
+      </div>
+      <div class="phase planCard">
+        <div class="planImg"><img src="images/trd_pic.jpg" alt="Membresía Mensual"></div>
+        <p>Acompañamiento y monitoreo continuo para mantenerte activo, actualizado y en práctica constante.</p>
       </div>
     </div>
   </div>
