@@ -33,7 +33,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=1.7">
+  <link rel="stylesheet" href="css/style.css?v=1.8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -405,9 +405,24 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
     <h2 style="margin-top:10px;">Lo que Dicen Nuestros Alumnos</h2>
     <p class="lead">Historias reales de quienes pasaron de perder a sostener su cuenta.</p>
     <div class="testiGrid">
-      <div class="tcard"><div class="q">&ldquo;</div><p>Llegu&eacute; despu&eacute;s de perder dinero solo. Hoy sostengo mi cuenta y opero con reglas, no por impulso.</p><div class="who">Alumno &middot; Monterrey</div></div>
-      <div class="tcard"><div class="q">&ldquo;</div><p>Ten&iacute;a mi dinero parado en el banco. Aprend&iacute; a invertir para mi retiro, paso a paso y acompa&ntilde;ada.</p><div class="who">Alumna &middot; Guadalajara</div></div>
-      <div class="tcard"><div class="q">&ldquo;</div><p>Ya sab&iacute;a la teor&iacute;a pero no era consistente. El m&eacute;todo y el acompa&ntilde;amiento diario lo cambiaron todo.</p><div class="who">Alumno &middot; CDMX</div></div>
+      <div class="testiVideoCard">
+        <video controls playsinline preload="metadata" style="width:100%;border-radius:14px;display:block;background:#000;">
+          <source src="https://okinoiv.s3.us-east-1.amazonaws.com/DE+CERO+A+INVERSIONITSA/TESTIMONIOS+ACADEMIA/TESTIMONIO+7+EDITADO.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+        </video>
+      </div>
+      <div class="testiVideoCard">
+        <video controls playsinline preload="metadata" style="width:100%;border-radius:14px;display:block;background:#000;">
+          <source src="https://okinoiv.s3.us-east-1.amazonaws.com/DE+CERO+A+INVERSIONITSA/TESTIMONIOS+ACADEMIA/TESTIMONIO+8+DE+CERO+A+INV.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+        </video>
+      </div>
+      <div class="testiVideoCard">
+        <video controls playsinline preload="metadata" style="width:100%;border-radius:14px;display:block;background:#000;">
+          <source src="https://okinoiv.s3.us-east-1.amazonaws.com/DE+CERO+A+INVERSIONITSA/TESTIMONIOS+ACADEMIA/TESTIMONIO+10+DE+CERO+A+INV.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+        </video>
+      </div>
     </div>
   </div>
 </section>
