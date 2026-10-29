@@ -1,4 +1,4 @@
-﻿  :root{
+﻿﻿  :root{
     --navy:#0A1E3F;
     --navy2:#0F2C5C;
     --navy3:#10355f;
@@ -152,6 +152,15 @@
     border-style: solid;
     border-color: rgba(63, 208, 240, 0.35);
     border-image: none;
+}
+.founder .av {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+    background: var(--navy2);
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(63,208,240,.35);
 }
   .founder .av img{width:100%;height:100%;object-fit:cover;display:block;}
   .founder .nm{color:var(--white);font-family:var(--serif);font-size:23px;font-weight:700;}

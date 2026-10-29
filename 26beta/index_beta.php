@@ -33,7 +33,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=1.8">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -273,7 +273,6 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
         <span class="l1">De cero a</span>
         <span class="l2">Inversionista</span>
         <span class="l3">Rentable</span>
-        <span class="l4">En <b>3 meses</b></span>
       </h1>
     </div>
 
@@ -356,11 +355,11 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
         <p>Aprende la verdadera mentalidad del inversionista, cómo funcionan los contratos de opciones y a identificar tendencias (canales alcistas y bajistas) para dar tus primeros pasos con seguridad.</p>
       </div>
       <div class="phase planCard">
-        <div class="planImg"><img src="images/trd_pic.jpg" alt="Invierte con Estrategia · Avanzado"></div>
+        <div class="planImg"><img src="images/promo2.jpg" alt="Invierte con Estrategia · Avanzado"></div>
         <p>Domina estrategias para mercados alcistas y bajistas, aplica una gestión estricta del capital y perfecciona tu análisis técnico para saber cuándo entrar y salir.</p>
       </div>
       <div class="phase planCard">
-        <div class="planImg"><img src="images/trd_pic.jpg" alt="Membresía Mensual"></div>
+        <div class="planImg"><img src="images/promo3.jpg" alt="Membresía Mensual"></div>
         <p>Acompañamiento y monitoreo continuo para mantenerte activo, actualizado y en práctica constante.</p>
       </div>
     </div>
@@ -464,15 +463,16 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
     <span class="eyebrow">Preguntas Frecuentes</span>
     <h2 style="margin-top:10px;">Preguntas Frecuentes</h2>
     <div class="faqGrid">
-      <div class="qa"><button>¿Requiero conocimientos previos de la bolsa?<span class="arr">+</span></button><div class="ans"><p>No. El método está diseñado para empezar desde cero. Te llevamos paso a paso, desde lo más básico hasta operar con tu propio capital.</p></div></div>
-      <div class="qa"><button>¿Cuánto tiempo dura el entrenamiento?<span class="arr">+</span></button><div class="ans"><p>El programa dura 3 meses, divididos en 3 fases: teoría, simulación y cuenta real. Después puedes seguir con la membresía y la comunidad.</p></div></div>
-      <div class="qa"><button>¿Puedo perder mi dinero al invertir?<span class="arr">+</span></button><div class="ans"><p>El riesgo existe, pero perderlo todo le pasa a quien opera sin control. El primer pilar del método es justo gestionar el riesgo.</p></div></div>
-      <div class="qa"><button>¿Necesito mucho dinero para empezar?<span class="arr">+</span></button><div class="ans"><p>No. En acciones puedes empezar desde $10-$30 USD, y primero entrenas en simulación sin arriesgar capital real.</p></div></div>
-      <div class="qa"><button>¿Qué resultados puedo esperar?<span class="arr">+</span></button><div class="ans"><p>Sin promesas: 7 de cada 10 alumnos son rentables. El método funciona, pero la disciplina la pones tú.</p></div></div>
-      <div class="qa"><button>¿Cómo aplico para una BECA y cómo sé si califico?<span class="arr">+</span></button><div class="ans"><p>Es un apoyo que reduce el costo del programa para quienes califican. La mejor forma de saber si aplicas es registrarte para un diagnóstico gratuito: ahí revisamos tu situación y te decimos con claridad si eres candidato.</p></div></div>
+      <div class="qa"><button>¿Requiero conocimientos previos de la bolsa?<span class="arr">+</span></button><div class="ans"><p>No. El método está diseñado para empezar desde cero. Te llevamos paso a paso, desde lo más básico hasta operar con tu propio capital</p></div></div>
+      <div class="qa"><button>¿Cómo está estructurado el entrenamiento?<span class="arr">+</span></button><div class="ans"><p>El programa se divide en 3 niveles de aprendizaje: teoría, simulación y cuenta real. Avanzas a tu ritmo, y después puedes seguir con la membresía y la comunidad</p></div></div>
+      <div class="qa"><button>¿Puedo perder mi dinero al invertir?<span class="arr">+</span></button><div class="ans"><p>El riesgo existe, pero perderlo todo le pasa a quien opera sin control. El primer pilar del método es justo gestionar el riesgo</p></div></div>
+      <div class="qa"><button>¿Necesito mucho dinero para empezar?<span class="arr">+</span></button><div class="ans"><p>No. En acciones puedes empezar desde $10-$30 USD, y primero entrenas en simulación sin arriesgar capital real</p></div></div>
+      <div class="qa"><button>¿Qué resultados puedo esperar?<span class="arr">+</span></button><div class="ans"><p>Sin promesas: 7 de cada 10 alumnos son rentables. El método funciona, pero la disciplina la pones tú</p></div></div>
+      <div class="qa"><button>¿Cómo aplico para una BECA y cómo sé si califico?<span class="arr">+</span></button><div class="ans"><p>Es un apoyo que reduce el costo del programa para quienes califican. La mejor forma de saber si aplicas es registrarte para un diagnóstico gratuito: ahí revisamos tu situación y te decimos con claridad si eres candidato</p></div></div>
+      <div class="qa"><button>¿Cuánto dura cada nivel del programa?<span class="arr">+</span></button><div class="ans"><p>Invierte Sin Miedo (básico) es intensivo de 1 mes. Invierte con Estrategia (avanzado) dura 3 meses. La Membresía Mensual es continua, para mantenerte activo y en práctica el tiempo que quieras</p></div></div>
+      <div class="qa"><button>¿Qué resultados se esperan en cada nivel?<span class="arr">+</span></button><div class="ans"><p>En el básico aprendes la mentalidad del inversionista, las opciones y a leer tendencias. En el avanzado dominas estrategias alcistas y bajistas, gestión del capital y análisis técnico. Con la membresía sostienes tu progreso con acompañamiento y monitoreo constante</p></div></div>
     </div>
-    <div class="faqAll"><a href="preguntas-frecuentes.html" target="_blank" rel="noopener noreferrer">Ver más preguntas frecuentes →</a></div>
-    <!-- <div class="faqAll"><a href="#diagnostico" onclick="DIAG.open(event)">Ver todas las preguntas →</a></div> -->
+    <div class="faqAll"><a href="preguntas-frecuentes.html">Ver todas las preguntas →</a></div>
   </div>
 </section>
 
