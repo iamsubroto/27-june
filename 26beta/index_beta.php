@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header('Content-Type: text/html; charset=UTF-8');
 
 // Allow from any origin
@@ -22,10 +22,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 $template = 191;
 include_once('../../subdominio_ini.php');
 include('../../conexion_mysqli.php');
+if (isset($conn) && $conn instanceof mysqli) {
+    @$conn->set_charset("utf8");
+}
 $edit_param = '';
 if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
     $edit_param = "&mode=edit";
 }
+
+function cleanSpanishUtf8($inputString) {
+    if (!is_string($inputString) || $inputString === '') return '';
+    if (!mb_check_encoding($inputString, 'UTF-8')) {
+        $inputString = mb_convert_encoding($inputString, 'UTF-8', 'Windows-1252');
+    }
+    $inputString = preg_replace('/\bS[\x{FFFD}\?]?\s+de\s+los\s+primeros\b/u', 'S\xc3\xa9 de los primeros', $inputString);
+    $inputString = str_replace(["S\xEF\xBF\xBD", "S\u{FFFD}"], "S\xc3\xa9", $inputString);
+    $inputString = str_replace(["\xC2\xA0", "\u{00A0}", "&nbsp;"], ' ', $inputString);
+    $inputString = str_replace(["\xEF\xBF\xBD", "\u{FFFD}"], '', $inputString);
+    return trim($inputString);
+}
+
+function cleanPlaceholderText($inputString, $defaultPlaceholder = '') {
+    if (!is_string($inputString) || trim($inputString) === '') {
+        return $defaultPlaceholder;
+    }
+    $clean = cleanSpanishUtf8($inputString);
+    $clean = preg_replace('/^[\s\x{00A0}\x{FFFD}\x{2022}\x{00B7}\*\:\-\.]+|[\s\x{00A0}\x{FFFD}\x{2022}\x{00B7}\*\:\-\.]+$/u', '', $clean);
+    if ($clean === '') {
+        return $defaultPlaceholder;
+    }
+    return $clean;
+}
+
+// Sanitize form variables coming from the database
+$titulo_formulario = cleanSpanishUtf8($titulo_formulario ?? '');
+if ($titulo_formulario === '') {
+    $titulo_formulario = 'Descubre la Experiencia Completa';
+}
+$texto_formulario = cleanSpanishUtf8($texto_formulario ?? '');
+if ($texto_formulario === '') {
+    $texto_formulario = 'S\xc3\xa9 de los primeros en conocer esta nueva propuesta';
+}
+$boton = cleanSpanishUtf8($boton ?? '');
+if ($boton === '') {
+    $boton = 'Comenzar Ahora';
+}
+$form_input_name_placeholder = cleanPlaceholderText($form_input_name_placeholder ?? '', 'Ingresa tu Nombre');
+$form_input_email_placeholder = cleanPlaceholderText($form_input_email_placeholder ?? '', 'Ingresa tu E-mail');
+$form_input_whatsapp_placeholder = cleanPlaceholderText($form_input_whatsapp_placeholder ?? '', 'Ingresa tu whatsapp');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -33,7 +77,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Cero a Inversionista &middot; Bolsa de NY</title>
-  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/style.css?v=2.3">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Editor Scripts & Styles -->
@@ -518,7 +562,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                 </div>
                 <div class="hover-edit">
                   <div class="form-subtitle" data-id="landing-page-form-sub-title">
-                    <h6><?= $texto_formulario; ?></h6>
+                    <h6><?= cleanSpanishUtf8($texto_formulario); ?></h6>
                   </div>
                   <!-- Edit Starts -->
                   <div class="edit-btn-container">
@@ -529,7 +573,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
 
                 <div class="hover-edit">
                   <div class="form-group">
-                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?php echo ($form_input_name_placeholder != "") ? $form_input_name_placeholder : 'Ingresa tu Nombre' ?>" data-id="form-name-placeholder">
+                    <input type="text" name="nombre" class="form-control" id="name" required placeholder="<?= cleanPlaceholderText($form_input_name_placeholder, 'Ingresa tu Nombre'); ?>" data-id="form-name-placeholder">
                     <small class="error-beta" style="display: none;">You must enter your name.</small>
                   </div>
                   <!-- Edit Starts -->
@@ -541,7 +585,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                 </div>
                 <div class="hover-edit">
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?php echo ($form_input_email_placeholder != "") ? $form_input_email_placeholder : 'Ingresa tu E-mail' ?>" data-id="form-email-placeholder">
+                    <input type="email" name="email" class="form-control" required id="e-mail" placeholder="<?= cleanPlaceholderText($form_input_email_placeholder, 'Ingresa tu E-mail'); ?>" data-id="form-email-placeholder">
                     <small class="error-beta" style="display: none;">You must enter a e-mail.</small>
                   </div>
                   <!-- Edit Starts -->
@@ -552,7 +596,7 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                 </div>
                 <div class="hover-edit" id="whatsapp_field_div" <?php if ($form_input_whatsapp_visible == '1') { ?> style="display: none" <?php } ?>>
                   <div class="form-group">
-                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?php echo ($form_input_whatsapp_placeholder != "") ? $form_input_whatsapp_placeholder : 'Ingresa tu whatsapp' ?>" data-id="form-whatsapp-placeholder">
+                    <input type="tel" name="telefono_casa" class="form-control" id="whatsapp" placeholder="<?= cleanPlaceholderText($form_input_whatsapp_placeholder, 'Ingresa tu whatsapp'); ?>" data-id="form-whatsapp-placeholder">
                   </div>
                   <!-- Edit Starts -->
                   <div class="edit-btn-container">
@@ -560,6 +604,8 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                     <a href="javascript:void(0);" onclick="(($(this).parent('.edit-btn-container')).parent('.hover-edit')).hide(); $('#whatsapp_field_div').hide();$('#whatsapp_show_again').removeAttr('checked'); $('#whatsapp_show_again_div').show(); $('#subdominio_form_whatsapp_visible').val(1);" class="dlt-btn"><i class="fa fa-trash"></i></a>
                   </div>
                   <!-- Edit Ends -->
+                </div>
+                <div class="hover-edit">
                   <button type="button" <?php if ($form_submit_button_bg != '') { ?> style="background: <?php echo $form_submit_button_bg; ?>" <?php } ?> data-id="landing-page-form-submit-button" class="btn btn-default btn-submit" onclick="$('#formContainer input:first').focus();"><?= $boton; ?></button>
                 </div>
               </div>
@@ -573,17 +619,11 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'edit') {
                             <h3 class="gptChat">INTELIGENCIA ARTIFICIAL</h3>
                             <div id="formContainer">
                                 <?php
-                                function fixSpanishCode($inputString)
-                                {
-                                    if (!is_string($inputString) || $inputString === '') return $inputString;
-                                    // already UTF-8? converting again would double-encode it
-                                    if (preg_match('/[\xC2-\xF4][\x80-\xBF]/', $inputString) && mb_check_encoding($inputString, 'UTF-8')) {
-                                        return $inputString;
+                                if (!function_exists('fixSpanishCode')) {
+                                    function fixSpanishCode($inputString)
+                                    {
+                                        return cleanSpanishUtf8($inputString);
                                     }
-                                    // Windows-1252, not iso-8859-1: 0x80-0x9F holds the curly quotes and
-                                    // dashes people paste into prompts; iso-8859-1 turns them invisible.
-                                    $outPutString = mb_convert_encoding($inputString, "UTF-8", "Windows-1252");
-                                    return $outPutString;
                                 }
 
                                 if (isset($rowTEM['subdominio']) && $grupal == TRUE)

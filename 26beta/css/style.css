@@ -301,7 +301,8 @@
     .quoteCard{top:10px;right:10px;width:150px;padding:10px 12px;}
     #nysePrice{font-size:20px;}
     .statGrid,.phaseGrid,.testiGrid{grid-template-columns:1fr;}
-    .ceroGrid,.histGrid,.pqGrid,.faqGrid,.footGrid{grid-template-columns:1fr;}
+    .ceroGrid,.histGrid,.pqGrid,.faqGrid,.footGrid,.videoFormGrid,.aiInputContent .row{grid-template-columns:1fr;}
+    .videoFormGrid{gap:32px;}
     #bullSvg{width:150px;height:110px;opacity:.2;}
     .heroPills{gap:16px;}
   }
@@ -316,10 +317,59 @@
     padding: 80px 0;
     overflow: hidden;
   }
-  .videoCentered {
-    max-width: 800px;
-    margin: 0 auto;
+  .videoFormGrid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .videoCol {
+    min-width: 0;
     width: 100%;
+  }
+  .formCol {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Responsive Video Player */
+  .flex-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000;
+    box-shadow: 0 14px 40px rgba(4, 16, 36, 0.45);
+    border: 1px solid rgba(63, 208, 240, 0.2);
+  }
+  .flex-video iframe,
+  .flex-video object,
+  .flex-video embed,
+  .flex-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 16px;
+  }
+
+  .section-bg,
+  .hover-edit {
+    position: relative;
+  }
+
+  .error-beta {
+    background: #f04124;
+    color: #ffffff;
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    border-radius: 6px;
+    margin-top: 6px;
+    padding: 6px 10px;
   }
   
   /* Form Box Styles */
